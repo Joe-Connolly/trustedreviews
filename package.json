@@ -1,0 +1,15 @@
+{
+  "name": "starterpack-RichardJiangYang",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/dartmouth-cs52-19S/starterpack-RichardJiangYang.git",
+  "author": "Richard Jiang Yang <richard.j.yang.19@dartmouth.edu>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
