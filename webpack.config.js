@@ -8,7 +8,8 @@ const env = process.env.NODE_ENV || 'development';
 const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { loader: 'style-loader' };
 
 module.exports = {
-  mode: env,
+  mode: env, // right after:
+  output: { publicPath: '/' },
   entry: ['babel-polyfill', './src'], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
   module: {
@@ -66,8 +67,13 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './200.html',
+    }),
   ],
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
 };

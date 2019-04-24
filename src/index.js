@@ -1,25 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.scss';
+import {
+  BrowserRouter as Router, Switch, Route, NavLink,
+} from 'react-router-dom';
 
-const App = () => <div className="test">All the REACT are belong to us!</div>;
+// const App = () => <div className="test">All the REACT are belong to us!</div>;
+
+const About = (props) => {
+  return <div> All there is to know about me </div>;
+};
+const Welcome = (props) => {
+  return <div>Welcome</div>;
+};
+const Nav = (props) => {
+  return (
+    <nav>
+      <ul>
+        <li><NavLink to="/" exact>Home</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/test/id1">test id1</NavLink></li>
+        <li><NavLink to="/test/id2">test id2</NavLink></li>
+        <li><NavLink to="/badLink">bad link</NavLink></li>
+      </ul>
+    </nav>
+  );
+};
+const Test = (props) => {
+  return <div> ID: {props.match.params.id} </div>;
+};
+const FallBack = (props) => {
+  return <div>URL Not Found</div>;
+};
+
+const App = (props) => {
+  return (
+    <Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Welcome} />
+          <Route path="/about" component={About} />
+          <Route exact path="/test/:id" component={Test} />
+          <Route component={FallBack} />
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById('main'));
-
-/*
-import $ from 'jquery';
-import './style.scss';
-
-$('#main').html('You\'ve been on this page for 1 second.');
-
-let num = 1;
-setInterval(() => {
-  num += 1;
-  const output = `You've been on this page for ${num} seconds.`;
-  $('#main').html(output);
-}, 1000);
-
-var hello = 'hi';
-var output = `I wanna output ${hello}`;
-$('#main').html(output);
-*/
