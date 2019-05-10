@@ -1,4 +1,4 @@
-# Project Name
+# Trusted Reviews
 
 ![Team Photo](Insert a Team Photo URL here)
 [*how?*](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)
@@ -19,6 +19,6 @@ TODO: how to deploy the project
 
 ## Authors
 
-TODO: list of authors
+Shreyas Agnihotri, Joseph Connolly, Soren Thompson, Richard Yang
 
 ## Acknowledgments
