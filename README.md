@@ -19,6 +19,6 @@ TODO: how to deploy the project
 
 ## Authors
 
-TODO: list of authors
+Shreyas Agnihotri, Joseph Connolly, Soren Thompson, Richard Yang
 
 ## Acknowledgments
