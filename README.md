@@ -18,9 +18,23 @@ The backend of this app is a mongoDB database using mongoose for schema-based mo
 
 TODO: how to get the project dev environment up and running, npm install etc
 
+To setup the frontend dev environment:
+
+1. Install homebrew
+  * `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+  * Or, if homebrew is already installed: `brew update`
+2. Install node.js and yarn
+  * `brew install node`
+  * `brew install yarn`
+3. Yarn your nodes!
+  * `yarn install`
+
+
 ## Deployment
 
-TODO: how to deploy the project
+To deploy frontend:
+
+`yarn deploy`
 
 ## Authors
 
