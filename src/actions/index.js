@@ -11,7 +11,8 @@ export const ActionTypes = {
   DELETE_PRODUCT: 'DELETE_PRODUCT',
 };
 
-const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'http://localhost:9090/api';
+const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
 const API_KEY = '';
 
 export function fetchProducts() {
