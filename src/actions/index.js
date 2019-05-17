@@ -12,7 +12,7 @@ export const ActionTypes = {
 };
 
 // const ROOT_URL = 'http://localhost:9090/api';
-const ROOT_URL = 'https://trustedreviews.herokuapp.com/api';
+const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
 const API_KEY = '';
 
 export function fetchProducts() {
