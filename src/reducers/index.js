@@ -3,9 +3,11 @@
 import { combineReducers } from 'redux';
 
 import CountReducer from './count-reducer';
+import ReviewReducer from './reviews-reducer';
 
 const rootReducer = combineReducers({
   count: CountReducer,
+  review: ReviewReducer,
 });
 
 export default rootReducer;
