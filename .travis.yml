@@ -1,10 +1,10 @@
 language: node_js
-provider:
-  surge
 node_js:
   - "11"
 install:
   - yarn --ignore-engines
 script:
+  provider:
+    surge
   - yarn deploy
    
