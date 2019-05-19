@@ -33,7 +33,7 @@ class Signup extends Component {
   }
 
   onConfirmedPasswordChange(event) {
-    this.setState({ password: event.target.value });
+    this.setState({ confirmedPassword: event.target.value });
   }
 
 
