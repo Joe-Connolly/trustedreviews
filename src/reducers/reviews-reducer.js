@@ -2,7 +2,9 @@ import { ActionTypes } from '../actions';
 
 const initialState = {
   all: [],
-  current: {},
+  current: {
+    reviews: [],
+  },
 };
 
 const ReviewReducer = (state = initialState, action) => {

@@ -48,6 +48,11 @@ class NewReview extends Component {
     console.log(this.state.title);
     const newProduct = {
       title: this.state.title,
+      imageURL: this.state.picture_url,
+      company: this.state.company,
+      rating: this.state.rating,
+      numReviews: 1,
+      description: this.state.description,
     };
     this.props.createProduct(newProduct, this.props.history);
   }

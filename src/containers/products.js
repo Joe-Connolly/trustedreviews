@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import { fetchProducts } from '../actions/index';
 
 
@@ -21,18 +21,37 @@ class Products extends Component {
   render() {
     // eslint-disable-next-line max-len
     // const postThumbs = this.props.all.map(post => <NavLink to={`/posts/${post.id}`} className="thumbnail" key={post.id}> <img src={post.cover_url} alt={post.title} /> <Description tags={post.tags} author={post.author} title={post.title} /> </NavLink>);
-    const productTitles = this.props.all.map(product => <h1>{product.title}</h1>);
+    // const productTitles = this.props.all.map(product => <h1>{product.title}</h1>);
+    const products = this.props.all.map(product => <Display displayProduct={product} key={product._id} />);
+
     return (
       <div id="thumbnails">
         {/* <NoteCreator onNoteCreate={this.createNote} />
         {this.renderNotes(this.state.notes)} */}
-        <p>Here are our product titles</p>
+        {/* <p>Here are our product titles</p> */}
         {/* {postThumbs} */}
-        {productTitles}
+        {/* {productTitles} */}
+        {products}
       </div>
     );
   }
 }
+
+const Display = (props) => {
+  return (
+    <NavLink to={`/product/${props.displayProduct._id}`}>
+      <img src={props.displayProduct.imageURL} alt="Product Img Unavailable" />
+      <br />
+      {props.displayProduct.title}
+      <br />
+      {props.displayProduct.company}
+      <br />
+      {props.displayProduct.rating}
+      <br />
+      {props.displayProduct.numReviews}
+    </NavLink>
+  );
+};
 
 // const Description = (props) => {
 //   const tags = props.tags.split(' ').map(tag => <span key={tag}>{`#${tag} `}</span>);

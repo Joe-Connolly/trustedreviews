@@ -9,6 +9,7 @@ export const ActionTypes = {
   UPDATE_PRODUCT: 'UPDATE_PRODUCT',
   CREATE_PRODUCT: 'CREATE_PRODUCT',
   DELETE_PRODUCT: 'DELETE_PRODUCT',
+  FETCH_USER: 'FETCH_USER',
 };
 
 // const ROOT_URL = 'http://localhost:9090/api';
@@ -28,6 +29,7 @@ export function fetchProducts() {
 }
 
 export function fetchProduct(id) {
+  console.log(id);
   return (dispatch) => {
     axios.get(`${ROOT_URL}/products/${id}${API_KEY}`).then((response) => {
       // do something with response.data  (some json)
@@ -74,6 +76,19 @@ export function updateProduct(id, product) {
     }).catch((error) => {
       // hit an error do something else!
       console.log(`Oh no!! Failed to update product ${id}.`);
+    });
+  };
+}
+
+export function fetchUser(username) {
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/users/${username}${API_KEY}`).then((response) => {
+      // do something with response.data  (some json)
+      dispatch({ type: ActionTypes.FETCH_USER, payload: response.data });
+      console.log(response.data);
+    }).catch((error) => {
+      // hit an error do something else!
+      console.log(`Oh no!! Something went wrong when you tried to fetch user ${username}.`);
     });
   };
 }
