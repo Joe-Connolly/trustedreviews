@@ -1,8 +1,8 @@
- language: node_js
- node_js:
-   - "11"
-  install:
+language: node_js
+node_js:
+  - "11"
+install:
   - yarn --ignore-engines
-  script:
+script:
   - yarn deploy
    
