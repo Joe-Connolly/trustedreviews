@@ -12,6 +12,8 @@ import NewReview from '../containers/newReview';
 import Signin from '../containers/signin';
 import Signup from '../containers/signup';
 import Products from '../containers/products';
+import Product from '../containers/product';
+import User from '../containers/user';
 
 
 // const App = () => <div className="test">All the REACT are belong to us!</div>;
@@ -86,6 +88,8 @@ const App = (props) => {
           <Route path="/signin" component={Signin} />
           <Route path="/signup" component={Signup} />
           <Route path="/products" component={Products} />
+          <Route path="/product/:id" component={Product} />
+          <Route path="/user/:username" component={User} />
           <Route component={FallBack} />
         </Switch>
       </div>
