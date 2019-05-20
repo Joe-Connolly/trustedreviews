@@ -5,7 +5,6 @@ install:
   - yarn --ignore-engines
   - yarn build
 deploy:
-  - yarn build
   provider: surge
   project: ./dist/
   domain: trustedreviews.surge.sh
