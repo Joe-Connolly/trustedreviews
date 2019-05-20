@@ -3,8 +3,17 @@ import '../style.scss';
 import {
   BrowserRouter as Router, Switch, Route, NavLink,
 } from 'react-router-dom';
-import Counter from '../containers/counter';
-import Controls from '../containers/controls';
+// import Counter from '../containers/counter';
+// import Controls from '../containers/controls';
+// import Nav from '../containers/navBar';
+// import NewReview from '../containers/newReview';
+import Home from '../containers/home';
+import NewReview from '../containers/newReview';
+import Signin from '../containers/signin';
+import Signup from '../containers/signup';
+import Products from '../containers/products';
+import Product from '../containers/product';
+import User from '../containers/user';
 
 
 // const App = () => <div className="test">All the REACT are belong to us!</div>;
@@ -12,31 +21,56 @@ import Controls from '../containers/controls';
 const About = (props) => {
   return <div> All there is to know about me </div>;
 };
-const Welcome = (props) => {
-  return (
-    <div>
-        Welcome
-      <Counter />
-      <Controls />
-    </div>
-  );
-};
+// const Home = (props) => {
+//   return (
+//     <div>
+//         Welcome
+//       {/* <Counter />
+//       <Controls /> */}
+//     </div>
+//   );
+// };
+// const NewReview = (props) => {
+//   return (
+//     <div>
+//         Let us make a new review!
+//       {/* <Counter />
+//       <Controls /> */}
+//     </div>
+//   );
+// };
+// const Signin = (props) => {
+//   return (
+//     <div>
+//         Log In!
+//       {/* <Counter />
+//       <Controls /> */}
+//     </div>
+//   );
+// };
+// const Signup = (props) => {
+//   return (
+//     <div>
+//         Sign up!
+//       {/* <Counter />
+//       <Controls /> */}
+//     </div>
+//   );
+// };
+
 const Nav = (props) => {
   return (
     <nav>
-      <ul>
-        <li><NavLink to="/" exact>Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">test id1</NavLink></li>
-        <li><NavLink to="/test/id2">test id2</NavLink></li>
-        <li><NavLink to="/badLink">bad link</NavLink></li>
+      <ul id="nav">
+        <li><NavLink id="navItem" to="/" exact>LOGO</NavLink></li>
+        <li><NavLink id="navItem" to="/about">About</NavLink></li>
+        <li><NavLink id="navItem" to="/newReview">Write a Review</NavLink></li>
+        <li><NavLink id="navItem" to="/signin" exact>Log In</NavLink></li>
       </ul>
     </nav>
   );
 };
-const Test = (props) => {
-  return <div> ID: {props.match.params.id} </div>;
-};
+
 const FallBack = (props) => {
   return <div>URL Not Found</div>;
 };
@@ -46,10 +80,16 @@ const App = (props) => {
     <Router>
       <div>
         <Nav />
+        <hr />
         <Switch>
-          <Route exact path="/" component={Welcome} />
+          <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route exact path="/test/:id" component={Test} />
+          <Route path="/newReview" component={NewReview} />
+          <Route path="/signin" component={Signin} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/products" component={Products} />
+          <Route path="/product/:id" component={Product} />
+          <Route path="/user/:username" component={User} />
           <Route component={FallBack} />
         </Switch>
       </div>

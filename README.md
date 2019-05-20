@@ -12,7 +12,7 @@ TODO:  descriptions of code organization and tools and libraries used
 
 The frontend of this app is built on top of the front-end starterpack built by Tim Tregubov, utilizing webpack, babel, eslint, sass, react/reactrouter, redux, express, and mongo.
 
-The backend of this app is a mongoDB database using mongoose for schema-based models and Heroku for deployment.
+The backend of this app is a mongoDB database using mongoose for schema-based models and Heroku for deployment.  Access the backend here: https://github.com/dartmouth-cs52-19S/project-api-trustedreviews
 
 ## Setup
 
