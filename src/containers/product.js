@@ -55,6 +55,8 @@ const ReviewDisplay = (props) => {
         {props.displayReview.username}
       </NavLink>
       <br />
+      Upvote: 578  Downvote: 72
+      <br />
       {props.displayReview.rating}
       <br />
       {props.displayReview.body}
