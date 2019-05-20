@@ -3,6 +3,7 @@ node_js:
   - "11"
 install:
   - yarn --ignore-engines
+  - yarn build
 deploy:
   - yarn build
   provider: surge
