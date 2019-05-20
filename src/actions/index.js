@@ -10,6 +10,7 @@ export const ActionTypes = {
   CREATE_PRODUCT: 'CREATE_PRODUCT',
   DELETE_PRODUCT: 'DELETE_PRODUCT',
   FETCH_USER: 'FETCH_USER',
+  CREATE_REVIEW: 'CREATE_REVIEW',
 };
 
 // const ROOT_URL = 'http://localhost:9090/api';
@@ -89,6 +90,19 @@ export function fetchUser(username) {
     }).catch((error) => {
       // hit an error do something else!
       console.log(`Oh no!! Something went wrong when you tried to fetch user ${username}.`);
+    });
+  };
+}
+
+export function createReview(review, history) {
+  return (dispatch) => {
+    axios.post(`${ROOT_URL}/reviews${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      // do something with response.data  (some json)
+      dispatch({ type: ActionTypes.CREATE_REVIEW, payload: response.data });
+      history.push(`/product/${review.product}`);
+    }).catch((error) => {
+      console.log('Oh no!! Failed to create new review.');
+      console.log(error);
     });
   };
 }

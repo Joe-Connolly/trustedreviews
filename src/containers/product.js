@@ -25,14 +25,20 @@ class Product extends Component {
         <br />
         {this.props.current.title}
         <br />
-        {this.props.current.company}
+        Company: {this.props.current.company}
         <br />
-        {this.props.current.rating}
+        Rating: {this.props.current.rating}
         <br />
-        {this.props.current.numReviews}
+        Number of Reviews: {this.props.current.numReviews}
         <br />
-        {this.props.discription}
+        Description: {this.props.discription}
         <br />
+        Shop: Placeholder (URL)
+        <br />
+        <NavLink to={`/newReview/${this.props.current._id}`}>Write a Review</NavLink>
+        <br />
+        <br />
+        Reviews:
         {reviews}
       </div>
     );
@@ -44,6 +50,7 @@ const ReviewDisplay = (props) => {
     <div>
       {/* <img src={props.displayReview.imageURL} alt="Product Img Unavailable" />
       <br /> */}
+      <hr />
       <NavLink to={`/user/${props.displayReview.username}`}>
         {props.displayReview.username}
       </NavLink>

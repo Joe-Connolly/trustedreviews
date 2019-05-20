@@ -19,6 +19,8 @@ const ReviewReducer = (state = initialState, action) => {
       return state;
     case ActionTypes.UPDATE_PRODUCT:
       return Object.assign({}, state, { current: action.payload });
+    case ActionTypes.CREATE_REVIEW:
+      return state;
     default:
       return state;
   }

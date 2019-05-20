@@ -37,6 +37,7 @@ const ReviewDisplay = (props) => {
     <div>
       {/* <img src={props.displayReview.imageURL} alt="Product Img Unavailable" />
         <br /> */}
+      <hr />
       <NavLink to={`/product/${props.displayReview.product._id}`}>
         {props.displayReview.product.title}
       </NavLink>

@@ -47,7 +47,7 @@ class Nav extends Component {
         <ul id="nav">
           <li><NavLink id="navItem" to="/" exact>LOGO</NavLink></li>
           <li><NavLink id="navItem" to="/about">About</NavLink></li>
-          <li><NavLink id="navItem" to="/newReview">Write a Review</NavLink></li>
+          {/* <li><NavLink id="navItem" to="/newReview">Write a Review</NavLink></li> */}
           <li><NavLink id="navItem" to="/signin" exact>Log In</NavLink></li>
         </ul>
       </nav>
