@@ -4,7 +4,8 @@ node_js:
 install:
   - yarn --ignore-engines
 deploy:
+  - yarn build
   provider: surge
-  project: .
+  project: ./dist/
   domain: trustedreviews.surge.sh
   skip-cleanup: true
