@@ -3,9 +3,7 @@ node_js:
   - "11"
 install:
   - yarn --ignore-engines
-deploy:
-  provider: surge
-  project: .
-  domain: trustedreviews.surge.sh
-  skip-cleanup: true
+  - npm install surge
+script:
+  - yarn deploy
    
