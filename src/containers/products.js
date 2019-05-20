@@ -39,17 +39,21 @@ class Products extends Component {
 
 const Display = (props) => {
   return (
-    <NavLink to={`/product/${props.displayProduct._id}`}>
-      <img src={props.displayProduct.imageURL} alt="Product Img Unavailable" />
+    <div>
+      <NavLink to={`/product/${props.displayProduct._id}`}>
+        <img src={props.displayProduct.imageURL} alt="Product Img Unavailable" />
+        <br />
+        {props.displayProduct.title}
+        <br />
+        {props.displayProduct.company}
+        <br />
+        {props.displayProduct.rating}
+        <br />
+        {props.displayProduct.numReviews}
+      </NavLink>
       <br />
-      {props.displayProduct.title}
-      <br />
-      {props.displayProduct.company}
-      <br />
-      {props.displayProduct.rating}
-      <br />
-      {props.displayProduct.numReviews}
-    </NavLink>
+      <hr />
+    </div>
   );
 };
 

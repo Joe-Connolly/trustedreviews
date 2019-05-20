@@ -1,74 +1,121 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createProduct } from '../actions/index';
+import { fetchProduct, createReview } from '../actions/index';
 
 
 class NewReview extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      picture_url: '',
-      company: '',
-      description: '',
-      rating: 0,
+      // title: '',
+      // picture_url: '',
+      // company: '',
+      // description: '',
+      username: '',
+      rating: '',
+      ratingBody: '',
     };
 
-    this.onTitleChange = this.onTitleChange.bind(this);
-    this.onPictureURLChange = this.onPictureURLChange.bind(this);
-    this.onCompanyChange = this.onCompanyChange.bind(this);
-    this.onDescriptionChange = this.onDescriptionChange.bind(this);
+    // this.onTitleChange = this.onTitleChange.bind(this);
+    // this.onPictureURLChange = this.onPictureURLChange.bind(this);
+    // this.onCompanyChange = this.onCompanyChange.bind(this);
+    // this.onDescriptionChange = this.onDescriptionChange.bind(this);
+    this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onRatingChange = this.onRatingChange.bind(this);
+    this.onRatingBodyChange = this.onRatingBodyChange.bind(this);
 
     this.onNewReviewSubmit = this.onNewReviewSubmit.bind(this);
   }
 
-  onTitleChange(event) {
-    this.setState({ title: event.target.value });
+  componentDidMount() {
+    this.props.fetchProduct(this.props.match.params.id);
   }
 
-  onPictureURLChange(event) {
-    this.setState({ picture_url: event.target.value });
-  }
+  // onTitleChange(event) {
+  //   this.setState({ title: event.target.value });
+  // }
 
-  onCompanyChange(event) {
-    this.setState({ company: event.target.value });
-  }
+  // onPictureURLChange(event) {
+  //   this.setState({ picture_url: event.target.value });
+  // }
 
-  onDescriptionChange(event) {
-    this.setState({ description: event.target.value });
+  // onCompanyChange(event) {
+  //   this.setState({ company: event.target.value });
+  // }
+
+  // onDescriptionChange(event) {
+  //   this.setState({ description: event.target.value });
+  // }
+
+  onUsernameChange(event) {
+    this.setState({ username: event.target.value });
   }
 
   onRatingChange(event) {
     this.setState({ rating: event.target.value });
   }
 
+  onRatingBodyChange(event) {
+    this.setState({ ratingBody: event.target.value });
+  }
+
+  // onNewReviewSubmit() {
+  //   console.log(this.state.title);
+  //   const newProduct = {
+  //     title: this.state.title,
+  //     imageURL: this.state.picture_url,
+  //     company: this.state.company,
+  //     rating: this.state.rating,
+  //     numReviews: 1,
+  //     description: this.state.description,
+  //   };
+  //   this.props.createProduct(newProduct, this.props.history);
+  // }
+
   onNewReviewSubmit() {
-    console.log(this.state.title);
-    const newProduct = {
-      title: this.state.title,
-      imageURL: this.state.picture_url,
-      company: this.state.company,
+    console.log(this.state.username);
+    console.log(this.state.rating);
+    console.log(this.state.ratingBody);
+
+    const review = {
+      body: this.state.ratingBody,
+      username: this.state.username,
       rating: this.state.rating,
-      numReviews: 1,
-      description: this.state.description,
+      product: this.props.current._id,
     };
-    this.props.createProduct(newProduct, this.props.history);
+
+    this.props.createReview(review, this.props.history);
   }
 
   render() {
     return (
       <div id="thumbnails">
-        <input onChange={this.onTitleChange} value={this.state.title} placeholder="product title" />
+        {/* <input onChange={this.onTitleChange} value={this.state.title} placeholder="product title" />
         <br />
         <input onChange={this.onPictureURLChange} value={this.state.picture_url} placeholder="product picture URL" />
         <br />
         <input onChange={this.onCompanyChange} value={this.state.company} placeholder="product company" />
         <br />
         <input onChange={this.onDescriptionChange} value={this.state.description} placeholder="product description" />
+        <br /> */}
+
+        <img src={this.props.current.imageURL} alt="Product Img Unavailable" />
         <br />
-        <input onChange={this.onRatingChange} value={this.state.rating} placeholder="rating (out of 5 stars)" />
+        {this.props.current.title}
+        <br />
+        Company: {this.props.current.company}
+        <br />
+        Description: {this.props.discription}
+        <br />
+        <hr />
+        Review:
+        <br />
+        Username (placeholder): <input onChange={this.onUsernameChange} value={this.state.username} placeholder="username" />
+        <br />
+        Rating: <input onChange={this.onRatingChange} value={this.state.rating} placeholder="rating (out of 5 stars)" />
+        <br />
+        Review Description: <input onChange={this.onRatingBodyChange} value={this.state.ratingBody} placeholder="rating description" />
         <br />
         <button type="button" onClick={this.onNewReviewSubmit}>Submit</button>
       </div>
@@ -77,13 +124,12 @@ class NewReview extends Component {
 }
 
 
-// connects particular parts of redux state to this components props
-// const mapStateToProps = state => (
-//   {
-//     // all: state.products.all,
-//   }
-// );
+const mapStateToProps = state => (
+  {
+    current: state.review.current,
+  }
+);
 
 // react-redux glue -- outputs Container that know state in props
 // also with an optional HOC withRouter
-export default withRouter(connect(null, { createProduct })(NewReview));
+export default withRouter(connect(mapStateToProps, { fetchProduct, createReview })(NewReview));

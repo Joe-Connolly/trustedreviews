@@ -64,7 +64,7 @@ const Nav = (props) => {
       <ul id="nav">
         <li><NavLink id="navItem" to="/" exact>LOGO</NavLink></li>
         <li><NavLink id="navItem" to="/about">About</NavLink></li>
-        <li><NavLink id="navItem" to="/newReview">Write a Review</NavLink></li>
+        {/* <li><NavLink id="navItem" to="/newReview">Write a Review</NavLink></li> */}
         <li><NavLink id="navItem" to="/signin" exact>Log In</NavLink></li>
       </ul>
     </nav>
@@ -84,7 +84,7 @@ const App = (props) => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/newReview" component={NewReview} />
+          <Route path="/newReview/:id" component={NewReview} />
           <Route path="/signin" component={Signin} />
           <Route path="/signup" component={Signup} />
           <Route path="/products" component={Products} />
