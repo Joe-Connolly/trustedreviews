@@ -5,6 +5,6 @@ install:
   - yarn --ignore-engines
 deploy:
   provider: surge
-  project: .
+  project: ./dist/
   domain: trustedreviews.surge.sh
   skip-cleanup: true
