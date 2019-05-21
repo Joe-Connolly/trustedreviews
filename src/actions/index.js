@@ -2,8 +2,6 @@ import axios from 'axios';
 
 // keys for actiontypes
 export const ActionTypes = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
   FETCH_PRODUCTS: 'FETCH_PRODUCTS',
   FETCH_PRODUCT: 'FETCH_PRODUCT',
   UPDATE_PRODUCT: 'UPDATE_PRODUCT',
@@ -11,6 +9,8 @@ export const ActionTypes = {
   DELETE_PRODUCT: 'DELETE_PRODUCT',
   FETCH_USER: 'FETCH_USER',
   CREATE_REVIEW: 'CREATE_REVIEW',
+  INCREMENT: 'UPVOTE',
+  DECREMENT: 'DOWNVOTE',
 };
 
 // const ROOT_URL = 'http://localhost:9090/api';
@@ -107,16 +107,26 @@ export function createReview(review, history) {
   };
 }
 
-export function increment() {
-  return {
-    type: ActionTypes.INCREMENT,
-    payload: null,
+export function upvote(review) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/reviews/upvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      // do something with response.data  (some json)
+      dispatch({ type: ActionTypes.UPVOTE, payload: response.data });
+    }).catch((error) => {
+      // hit an error do something else!
+      console.log(`Oh no!! Failed to upvote for review ${review._id}.`);
+    });
   };
 }
 
-export function decrement() {
-  return {
-    type: ActionTypes.DECREMENT,
-    payload: null,
+export function downvote(review) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/reviews/downvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      // do something with response.data  (some json)
+      dispatch({ type: ActionTypes.DOWNVOTE, payload: response.data });
+    }).catch((error) => {
+      // hit an error do something else!
+      console.log(`Oh no!! Failed to downvote for review ${review._id}.`);
+    });
   };
 }
