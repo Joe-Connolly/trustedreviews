@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
-import { fetchProduct } from '../actions/index';
+import { fetchProduct, upvote, downvote } from '../actions/index';
 
 
 // this can be dumb or smart component - connect works with either
@@ -17,7 +17,8 @@ class Product extends Component {
   }
 
   render() {
-    const reviews = this.props.current.reviews.map(review => <ReviewDisplay displayReview={review} key={review._id} />);
+    // eslint-disable-next-line max-len
+    const reviews = this.props.current.reviews.map(review => <ReviewDisplay displayReview={review} key={review._id} upvote={this.props.upvote} downvote={this.props.downvote} up={review.upvotes} down={review.downvotes} />);
 
     return (
       <div id="thumbnails">
@@ -55,9 +56,16 @@ const ReviewDisplay = (props) => {
         {props.displayReview.username}
       </NavLink>
       <br />
-      {props.displayReview.rating}
+      {/* Placeholder buttons */}
+      <button type="button" onClick={props.increment}>Upvote</button> {props.up}
       <br />
-      {props.displayReview.body}
+      <button type="button" onClick={props.decrement}>Downvote</button> {props.down}
+      <br />
+      Helpful Ratio: {props.up / props.down}
+      <br />
+      Rating: {props.displayReview.rating}
+      <br />
+      Rating Description: {props.displayReview.body}
     </div>
   );
 };
@@ -71,4 +79,4 @@ const mapStateToProps = state => (
 
 // react-redux glue -- outputs Container that know state in props
 // also with an optional HOC withRouter
-export default withRouter(connect(mapStateToProps, { fetchProduct })(Product));
+export default withRouter(connect(mapStateToProps, { fetchProduct, upvote, downvote })(Product));

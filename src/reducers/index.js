@@ -2,12 +2,12 @@
 // this defines what your store state will look like
 import { combineReducers } from 'redux';
 
-import CountReducer from './count-reducer';
+// import CountReducer from './count-reducer';
 import ReviewReducer from './reviews-reducer';
 import UserReducer from './user-reducer';
 
 const rootReducer = combineReducers({
-  count: CountReducer,
+  // count: CountReducer,
   review: ReviewReducer,
   userProfile: UserReducer,
 });
