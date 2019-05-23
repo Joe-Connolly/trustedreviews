@@ -9,17 +9,17 @@ export const ActionTypes = {
   DELETE_PRODUCT: 'DELETE_PRODUCT',
   FETCH_USER: 'FETCH_USER',
   CREATE_REVIEW: 'CREATE_REVIEW',
-  INCREMENT: 'UPVOTE',
-  DECREMENT: 'DOWNVOTE',
+  UPVOTE: 'UPVOTE',
+  DOWNVOTE: 'DOWNVOTE',
 };
 
 // const ROOT_URL = 'http://localhost:9090/api';
 const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
 const API_KEY = '';
 
-export function fetchProducts() {
+export function fetchProducts(searchTerm) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/products${API_KEY}`).then((response) => {
+    axios.get(`${ROOT_URL}/products${API_KEY}/?search=${searchTerm}`).then((response) => {
       // do something with response.data  (some json)
       dispatch({ type: ActionTypes.FETCH_PRODUCTS, payload: response.data });
     }).catch((error) => {
@@ -112,6 +112,7 @@ export function upvote(review) {
     axios.put(`${ROOT_URL}/reviews/upvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       // do something with response.data  (some json)
       dispatch({ type: ActionTypes.UPVOTE, payload: response.data });
+      document.location.reload(true);
     }).catch((error) => {
       // hit an error do something else!
       console.log(`Oh no!! Failed to upvote for review ${review._id}.`);
@@ -124,6 +125,7 @@ export function downvote(review) {
     axios.put(`${ROOT_URL}/reviews/downvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       // do something with response.data  (some json)
       dispatch({ type: ActionTypes.DOWNVOTE, payload: response.data });
+      document.location.reload(true);
     }).catch((error) => {
       // hit an error do something else!
       console.log(`Oh no!! Failed to downvote for review ${review._id}.`);
