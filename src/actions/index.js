@@ -2,8 +2,6 @@ import axios from 'axios';
 
 // keys for actiontypes
 export const ActionTypes = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
 
   FETCH_PRODUCTS: 'FETCH_PRODUCTS',
   FETCH_PRODUCT: 'FETCH_PRODUCT',
@@ -17,6 +15,10 @@ export const ActionTypes = {
   AUTH_USER: 'AUTH_USER',
   DEAUTH_USER: 'DEAUTH_USER',
   AUTH_ERROR: 'AUTH_ERROR',
+
+  UPVOTE: 'UPVOTE',
+  DOWNVOTE: 'DOWNVOTE',
+  SEARCH_CHANGED: 'SEARCH_CHANGED',
 };
 
 // const ROOT_URL = 'http://localhost:9090/api';
@@ -24,12 +26,12 @@ const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
 const API_KEY = '';
 
 /* Review and product functions */
-
-export function fetchProducts() {
+export function fetchProducts(searchTerm, history) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/products${API_KEY}`).then((response) => {
+    axios.get(`${ROOT_URL}/products${API_KEY}/search/?searchTerm=${searchTerm}`).then((response) => {
       // do something with response.data  (some json)
       dispatch({ type: ActionTypes.FETCH_PRODUCTS, payload: response.data });
+      history.push('/products');
     }).catch((error) => {
       // hit an error do something else!
       console.log('Oh no!! Something went wrong when you tried to fetch all products.');
@@ -165,19 +167,35 @@ export function signoutUser(history) {
   };
 }
 
-
 /* Upvote/Downvote functions */
-
-export function increment() {
-  return {
-    type: ActionTypes.INCREMENT,
-    payload: null,
+export function upvote(review) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/reviews/upvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      // do something with response.data  (some json)
+      dispatch({ type: ActionTypes.UPVOTE, payload: response.data });
+      document.location.reload(true);
+    }).catch((error) => {
+      // hit an error do something else!
+      console.log(`Oh no!! Failed to upvote for review ${review._id}.`);
+    });
   };
 }
 
-export function decrement() {
-  return {
-    type: ActionTypes.DECREMENT,
-    payload: null,
+export function downvote(review) {
+  return (dispatch) => {
+    axios.put(`${ROOT_URL}/reviews/downvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
+      // do something with response.data  (some json)
+      dispatch({ type: ActionTypes.DOWNVOTE, payload: response.data });
+      document.location.reload(true);
+    }).catch((error) => {
+      // hit an error do something else!
+      console.log(`Oh no!! Failed to downvote for review ${review._id}.`);
+    });
+  };
+}
+
+export function onSearchChanged(searchTerm) {
+  return (dispatch) => {
+    dispatch({ type: ActionTypes.SEARCH_CHANGED, payload: searchTerm });
   };
 }
