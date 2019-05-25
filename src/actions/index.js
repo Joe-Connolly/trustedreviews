@@ -11,17 +11,19 @@ export const ActionTypes = {
   CREATE_REVIEW: 'CREATE_REVIEW',
   UPVOTE: 'UPVOTE',
   DOWNVOTE: 'DOWNVOTE',
+  SEARCH_CHANGED: 'SEARCH_CHANGED',
 };
 
 // const ROOT_URL = 'http://localhost:9090/api';
 const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
 const API_KEY = '';
 
-export function fetchProducts(searchTerm) {
+export function fetchProducts(searchTerm, history) {
   return (dispatch) => {
-    axios.get(`${ROOT_URL}/products${API_KEY}/?search=${searchTerm}`).then((response) => {
+    axios.get(`${ROOT_URL}/products${API_KEY}/search/?searchTerm=${searchTerm}`).then((response) => {
       // do something with response.data  (some json)
       dispatch({ type: ActionTypes.FETCH_PRODUCTS, payload: response.data });
+      history.push('/products');
     }).catch((error) => {
       // hit an error do something else!
       console.log('Oh no!! Something went wrong when you tried to fetch all products.');
@@ -130,5 +132,11 @@ export function downvote(review) {
       // hit an error do something else!
       console.log(`Oh no!! Failed to downvote for review ${review._id}.`);
     });
+  };
+}
+
+export function onSearchChanged(searchTerm) {
+  return (dispatch) => {
+    dispatch({ type: ActionTypes.SEARCH_CHANGED, payload: searchTerm });
   };
 }
