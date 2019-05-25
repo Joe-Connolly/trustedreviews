@@ -19,8 +19,8 @@ export const ActionTypes = {
   AUTH_ERROR: 'AUTH_ERROR',
 };
 
-const ROOT_URL = 'http://localhost:9090/api';
-// const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
+// const ROOT_URL = 'http://localhost:9090/api';
+const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
 const API_KEY = '';
 
 /* Review and product functions */

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { signupUser, signinUser } from '../actions/index';
 
 class Signup extends Component {
   constructor(props) {
@@ -47,10 +48,10 @@ class Signup extends Component {
         password: this.state.password,
         username: this.state.username,
       }, this.props.history);
-      this.props.signinUser({
-        email: this.state.email,
-        password: this.state.password,
-      });
+      // this.props.signinUser({
+      //   username: this.state.username,
+      //   password: this.state.password,
+      // });
     }
   }
 
@@ -81,4 +82,4 @@ class Signup extends Component {
 
 // react-redux glue -- outputs Container that know state in props
 // also with an optional HOC withRouter
-export default withRouter(connect(null, null)(Signup));
+export default withRouter(connect(null, { signupUser, signinUser })(Signup));

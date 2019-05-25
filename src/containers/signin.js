@@ -28,8 +28,8 @@ class Signin extends Component {
 
   onSigninSubmit() {
     console.log(this.state.username);
-    this.props.signinuser({
-      email: this.state.email,
+    this.props.signinUser({
+      username: this.state.username,
       password: this.state.password,
     }, this.props.history);
   }

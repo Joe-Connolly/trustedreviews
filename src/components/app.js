@@ -4,10 +4,6 @@ import '../style.scss';
 import {
   BrowserRouter as Router, Switch, Route, NavLink,
 } from 'react-router-dom';
-// import Counter from '../containers/counter';
-// import Controls from '../containers/controls';
-// import Nav from '../containers/navBar';
-// import NewReview from '../containers/newReview';
 import Home from '../containers/home';
 import NewReview from '../containers/newReview';
 import Signin from '../containers/signin';
