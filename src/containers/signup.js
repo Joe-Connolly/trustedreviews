@@ -38,7 +38,20 @@ class Signup extends Component {
 
 
   onSignupSubmit() {
-    console.log(this.state.username);
+    if (this.state.password !== this.state.confirmedPassword) {
+      console.log('Passwords do not match.');
+    } else {
+      console.log(this.state.username);
+      this.props.signupUser({
+        email: this.state.email,
+        password: this.state.password,
+        username: this.state.username,
+      }, this.props.history);
+      this.props.signinUser({
+        email: this.state.email,
+        password: this.state.password,
+      });
+    }
   }
 
   render() {
