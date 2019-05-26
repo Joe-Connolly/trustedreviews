@@ -34,7 +34,7 @@ class Product extends Component {
         <br />
         Description: {this.props.discription}
         <br />
-        Shop: Placeholder (URL)
+        Shop: {this.props.URL}
         <br />
         <NavLink to={`/newReview/${this.props.current._id}`}>Write a Review</NavLink>
         <br />

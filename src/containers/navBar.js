@@ -46,6 +46,7 @@ class Nav extends Component {
           <li><NavLink id="navItem" to="/about">About</NavLink></li>
           <li><NavLink id="navItem" to="/signin" exact>Log In</NavLink></li>
         </ul> */}
+        <hr />
       </nav>
     );
   }
