@@ -14,6 +14,7 @@ import User from '../containers/user';
 import RequireAuth from '../containers/requireAuth';
 import UnRequireAuth from '../containers/unRequireAuth';
 import Nav from '../containers/navBar';
+import Embed from '../containers/embed';
 
 const About = (props) => {
   return <div> All there is to know about me </div>;
@@ -39,8 +40,11 @@ const App = (props) => {
   return (
     <Router>
       <div>
-        <Nav />
-        <hr />
+        <Switch>
+          <Route path="/embed" />
+          <Route component={Nav} />
+        </Switch>
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
@@ -50,6 +54,7 @@ const App = (props) => {
           <Route path="/products" component={Products} />
           <Route path="/product/:id" component={Product} />
           <Route path="/user/:username" component={User} />
+          <Route path="/embed/:id" component={Embed} />
           <Route component={FallBack} />
         </Switch>
       </div>
