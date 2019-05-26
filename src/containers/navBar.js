@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { signoutUser } from '../actions/index';
 
 class Nav extends Component {
   constructor(props) {
@@ -11,45 +12,40 @@ class Nav extends Component {
   }
 
   onSignoutSubmit() {
-    // this.props.signoutUser(this.props.history);
-    console.log(this.props);
+    this.props.signoutUser(this.props.history);
   }
 
-  //   renderLoginItems() {
-  //     if (this.props.auth) {
-  //       return (
-  //         <ul id="nav">
-  //           <li><NavLink id="navItem" to="/" exact>Posts</NavLink></li>
-  //           <li><NavLink id="navItem" to="/posts/new">Create New Post</NavLink></li>
-  //           <li>
-  //             <NavLink id="navItem" to="/">
-  //               <span onClick={this.onSignoutSubmit} role="button" tabIndex={0} id="signoutSubmit">Signout</span>
-  //             </NavLink>
-  //           </li>
-  //         </ul>
-  //       );
-  //     } else {
-  //       return (
-  //         <ul id="nav">
-  //           <li><NavLink id="navItem" to="/" exact>Posts</NavLink></li>
-  //           <li><NavLink id="navItem" to="/posts/new">Create New Post</NavLink></li>
-  //           <li><NavLink id="navItem" to="/signin" exact>Signin</NavLink></li>
-  //           <li><NavLink id="navItem" to="/signup">Signup</NavLink></li>
-  //         </ul>
-  //       );
-  //     }
-  //   }
+  renderLoginItems() {
+    if (this.props.auth) {
+      return (
+        <ul id="nav">
+          <li><NavLink id="navItem" to="/" exact>LOGO</NavLink></li>
+          <li><NavLink id="navItem" to="/about">About</NavLink></li>
+          <NavLink id="navItem" to="/">
+            <span onClick={this.onSignoutSubmit} role="button" tabIndex={0} id="signoutSubmit">Signout</span>
+          </NavLink>
+        </ul>
+      );
+    } else {
+      return (
+        <ul id="nav">
+          <li><NavLink id="navItem" to="/" exact>LOGO</NavLink></li>
+          <li><NavLink id="navItem" to="/about">About</NavLink></li>
+          <li><NavLink id="navItem" to="/signin" exact>Log In</NavLink></li>
+        </ul>
+      );
+    }
+  }
 
   render() {
     return (
       <nav>
-        {/* {this.renderLoginItems()} */}
-        <ul id="nav">
+        {this.renderLoginItems()}
+        {/* <ul id="nav">
           <li><NavLink id="navItem" to="/" exact>LOGO</NavLink></li>
           <li><NavLink id="navItem" to="/about">About</NavLink></li>
-          {/* <li><NavLink id="navItem" to="/newReview">Write a Review</NavLink></li> */}
           <li><NavLink id="navItem" to="/signin" exact>Log In</NavLink></li>
-        </ul>
+        </ul> */}
       </nav>
     );
   }
@@ -57,8 +53,8 @@ class Nav extends Component {
 
 const mapStateToProps = state => (
   {
-    // auth: state.auth.authenticated,
+    auth: state.auth.authenticated,
   }
 );
 
-export default withRouter(connect(mapStateToProps, null)(Nav));
+export default withRouter(connect(mapStateToProps, { signoutUser })(Nav));

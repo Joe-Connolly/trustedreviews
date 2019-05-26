@@ -18,7 +18,7 @@ class Product extends Component {
 
   render() {
     // eslint-disable-next-line max-len
-    const reviews = this.props.current.reviews.map(review => <ReviewDisplay displayReview={review} key={review._id} upvote={this.props.upvote} downvote={this.props.downvote} parent={this} />);
+    const reviews = this.props.current.reviews.map(review => <ReviewDisplay displayReview={review} key={review._id} upvote={this.props.upvote} downvote={this.props.downvote} history={this.props.history} auth={this.props.auth} />);
 
     return (
       <div id="thumbnails">
@@ -62,9 +62,9 @@ const ReviewDisplay = (props) => {
       </NavLink>
       <br />
       {/* Placeholder buttons */}
-      <button type="button" onClick={() => { props.upvote(displayObject); }}>Upvote</button> {props.displayReview.numUpvotes}
+      <button type="button" onClick={() => { if (props.auth) { props.upvote(displayObject); } else { props.history.push('/signin'); } }}>Upvote</button> {props.displayReview.numUpvotes}
       <br />
-      <button type="button" onClick={() => { props.downvote(displayObject); }}>Downvote</button> {props.displayReview.numDownvotes}
+      <button type="button" onClick={() => { if (props.auth) { props.downvote(displayObject); } else { props.history.push('/signin'); } }}>Downvote</button> {props.displayReview.numDownvotes}
       <br />
       Helpful Ratio: {props.up / props.down}
       <br />
@@ -79,6 +79,7 @@ const ReviewDisplay = (props) => {
 const mapStateToProps = state => (
   {
     current: state.review.current,
+    auth: state.auth.authenticated,
   }
 );
 
