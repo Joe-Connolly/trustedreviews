@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
 import { fetchProducts } from '../actions/index';
-import SearchBar from './searchBar';
+// import SearchBar from './searchBar';
 
 
 // this can be dumb or smart component - connect works with either
@@ -16,7 +16,7 @@ class Products extends Component {
 
     return (
       <div id="thumbnails">
-        <SearchBar />
+        {/* <SearchBar /> */}
         {/* <NoteCreator onNoteCreate={this.createNote} />
         {this.renderNotes(this.state.notes)} */}
         {/* <p>Here are our product titles</p> */}

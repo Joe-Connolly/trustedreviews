@@ -8,7 +8,22 @@ import SearchBar from './searchBar';
 class Home extends Component {
   render() {
     return (
-      <SearchBar />
+      <div>
+        <SearchBar />
+        <div className="container">
+          <div className="row">
+            <div className="col-sm">
+              One of three columns
+            </div>
+            <div className="col-sm">
+              One of three columns
+            </div>
+            <div className="col-sm">
+              One of three columns
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

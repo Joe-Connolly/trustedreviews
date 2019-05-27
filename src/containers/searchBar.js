@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { Input, InputGroup, Button } from 'reactstrap';
 import { fetchProducts, onSearchChanged } from '../actions/index';
 
 class Home extends Component {
@@ -29,9 +30,13 @@ class Home extends Component {
 
   render() {
     return (
-      <div id="thumbnails">
-        <input className="searchTerm" onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="search" />
-        <button type="button" onClick={this.onSearchSubmit} id="SearchSubmitButton">Submit</button>
+      <div id="splash-image">
+        <div id="horizontal-container">
+          <InputGroup id="search-bar">
+            <Input onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="Search products..." />
+            <Button id="search-button" color="warning" onClick={this.onSearchSubmit}>Search</Button>
+          </InputGroup>
+        </div>
       </div>
     );
   }
