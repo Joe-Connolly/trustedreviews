@@ -46,7 +46,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <Navbar color="light" light expand="md" sticky="top">
+      <Navbar light expand="md" sticky="top" id="navbar">
         <NavbarBrand href="/">
             LOGO
         </NavbarBrand>

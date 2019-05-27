@@ -30,14 +30,10 @@ class Home extends Component {
 
   render() {
     return (
-      <div id="splash-image">
-        <div id="horizontal-container">
-          <InputGroup id="search-bar">
-            <Input onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="Search products..." />
-            <Button id="search-button" color="warning" onClick={this.onSearchSubmit}>Search</Button>
-          </InputGroup>
-        </div>
-      </div>
+      <InputGroup id="search-bar">
+        <Input onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="Search products..." />
+        <Button id="search-button" color="warning" onClick={this.onSearchSubmit}>Search</Button>
+      </InputGroup>
     );
   }
 }

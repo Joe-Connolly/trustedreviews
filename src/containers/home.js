@@ -9,7 +9,13 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <SearchBar />
+        <div className="jumbotron">
+          <h1 className="display-4 text-white font-weight-bold">Reviews reimagined.</h1>
+          <hr className="my-4" />
+          <SearchBar />
+          <hr className="my-8" />
+          <h3 className="text-white font-weight-bold">Explore the first truly secure database of verified customer reviews.</h3>
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-sm">

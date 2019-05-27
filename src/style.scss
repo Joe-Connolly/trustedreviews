@@ -1,59 +1,58 @@
 body, html {
     font-family: "Roboto", sans-serif;
-    // background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
-    // background: linear-gradient(to bottom, yellow 0%,green 40%,blue 100%);
     height: 100%;
 }
 
-// .logo {
-//     // background-image: url('img/basketballMeme.jpg');
-//     width: 100px;
-//     height: 100px;
-//     background-repeat: no-repeat;
-//     background-size: contain;
-// }
-
-// .active {
-//     color: pink;
-// }
+#navbar {
+    background-color: #F2833C;
+    height: 80px;
+}
 
 .navItem {
     margin-left: 15px;
     margin-right: 15px;
 }
 
-#splash-image {
-    background-image: url('img/sunglasses.jpg');
+#splash-image, .jumbotron {
+    background-image: url('img/shoesOnWall.jpg');
 
-    height: 60vh;
+    height: 70vh;
 
-    background-position: center;
-    background-repeat: no-repeat;
+    // background-position: center;
+    // background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#horizontal-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 #search-bar {
-    width: 60vw;
-    margin-top: 30vh;
+    width: 55vw;
 }
 
 #search-button {
     margin-left: 20px;
-    // background-color: goldenrod;
-    // color: white;
+    background-color: #F2833C;
 }
 
 #search-bar > * {
     border-radius: 20px;
     border-width: 0px;
+}
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-heading {
+  font-weight: 300;
 }
