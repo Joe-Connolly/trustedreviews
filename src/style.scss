@@ -13,19 +13,21 @@ body, html {
     margin-right: 15px;
 }
 
-#splash-image, .jumbotron {
+.jumbotron {
     background-image: url('img/shoesOnWall.jpg');
 
     height: 70vh;
 
-    // background-position: center;
-    // background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#banner-content {
+    margin-left: 20px;
 }
 
 #search-bar {
@@ -42,17 +44,16 @@ body, html {
     border-width: 0px;
 }
 
-.login,
-.image {
-  min-height: 100vh;
+#login {
+  height: 90vh;
 }
 
-.bg-image {
+#login-image {
   background-image: url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80');
   background-size: cover;
   background-position: center;
 }
 
-.login-heading {
-  font-weight: 300;
+.main-icon {
+    font-size: 48px;
 }

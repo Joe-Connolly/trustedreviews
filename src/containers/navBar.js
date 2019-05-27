@@ -48,7 +48,8 @@ class NavBar extends Component {
     return (
       <Navbar light expand="md" sticky="top" id="navbar">
         <NavbarBrand href="/">
-            LOGO
+          <i className="fas fa-pen-square" />
+          TRUSTED REVIEWS
         </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Nav className="ml-auto" navbar>

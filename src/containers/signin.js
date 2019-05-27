@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { withRouter, NavLink } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import { signinUser } from '../actions/index';
 
 class Signin extends Component {
@@ -48,31 +48,23 @@ class Signin extends Component {
       </div> */
       <div className="container-fluid">
         <div className="row no-gutter">
-          <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image" />
+          <div className="d-none d-md-flex col-md-4 col-lg-6" id="login-image" />
           <div className="col-md-8 col-lg-6">
-            <div className="login d-flex align-items-center py-5">
+            <div className="d-flex align-items-center py-5" id="login">
               <div className="container">
                 <div className="row">
                   <div className="col-md-9 col-lg-8 mx-auto">
-                    <h3 className="login-heading mb-4">Welcome back!</h3>
+                    <h3 className="font-weight-light mb-4">Welcome back!</h3>
                     <form>
                       <div className="form-label-group">
-                        <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required />
-                        {/* <label htmlFor="inputEmail">Email address</label> */}
+                        <input type="email" className="form-control" onChange={this.onUsernameChange} value={this.state.username} placeholder="Username" required />
                       </div>
-
                       <div className="form-label-group">
-                        <input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
-                        {/* <label htmlFor="inputPassword">Password</label> */}
+                        <input type="password" className="form-control" onChange={this.onPasswordChange} value={this.state.password} placeholder="Password" required />
                       </div>
-
-                      <div className="custom-control custom-checkbox mb-3">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        {/* <label className="custom-control-label" htmlFor="customCheck1">Remember password</label> */}
-                      </div>
-                      <button className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                      <button className="btn btn-lg btn-primary btn-block font-weight-bold mb-2" type="submit" onClick={this.onSigninSubmit}>Sign in</button>
                       <div className="text-center">
-                        {/* <a className="small" href="#">Forgot password?</a> */}
+                        <NavLink to="/signup" exact>Sign Up</NavLink>
                       </div>
                     </form>
                   </div>

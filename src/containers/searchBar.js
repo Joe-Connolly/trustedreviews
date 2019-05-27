@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Input, InputGroup, Button } from 'reactstrap';
 import { fetchProducts, onSearchChanged } from '../actions/index';
 
 class Home extends Component {
@@ -30,10 +29,10 @@ class Home extends Component {
 
   render() {
     return (
-      <InputGroup id="search-bar">
-        <Input onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="Search products..." />
-        <Button id="search-button" color="warning" onClick={this.onSearchSubmit}>Search</Button>
-      </InputGroup>
+      <div className="input-group mb-3" id="search-bar">
+        <input type="text" className="form-control" onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="Search products" />
+        <button className="btn" id="search-button" type="button" onClick={this.onSearchSubmit}>Search</button>
+      </div>
     );
   }
 }
