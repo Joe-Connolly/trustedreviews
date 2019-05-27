@@ -1,18 +1,59 @@
 body, html {
     font-family: "Roboto", sans-serif;
-    // background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
-    // background: linear-gradient(to bottom, yellow 0%,green 40%,blue 100%);
     height: 100%;
 }
 
-// .logo {
-//     // background-image: url('img/basketballMeme.jpg');
-//     width: 100px;
-//     height: 100px;
-//     background-repeat: no-repeat;
-//     background-size: contain;
-// }
+#navbar {
+    background-color: #F2833C;
+    height: 80px;
+}
 
-.active {
-    color: pink;
+.navItem {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.jumbotron {
+    background-image: url('img/shoesOnWall.jpg');
+
+    height: 70vh;
+
+    background-size: cover;
+    background-position: top;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#banner-content {
+    margin-left: 20px;
+}
+
+#search-bar {
+    width: 55vw;
+}
+
+#search-button {
+    margin-left: 20px;
+    background-color: #F2833C;
+}
+
+#search-bar > * {
+    border-radius: 20px;
+    border-width: 0px;
+}
+
+#login {
+  height: 90vh;
+}
+
+#login-image {
+  background-image: url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.main-icon {
+    font-size: 48px;
 }

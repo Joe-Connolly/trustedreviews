@@ -8,6 +8,7 @@ import reducers from './reducers';
 import { ActionTypes } from './actions';
 
 import App from './components/app';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // this creates the store with the reducers, and does some other stuff to initialize devtools
 // boilerplate to copy, don't have to know

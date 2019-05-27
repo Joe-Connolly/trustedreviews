@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';
 import Home from '../containers/home';
+import About from '../containers/about';
 import NewReview from '../containers/newReview';
 import Signin from '../containers/signin';
 import Signup from '../containers/signup';
@@ -16,9 +17,9 @@ import UnRequireAuth from '../containers/unRequireAuth';
 import Nav from '../containers/navBar';
 import Embed from '../containers/embed';
 
-const About = (props) => {
-  return <div> All there is to know about me </div>;
-};
+// const About = (props) => {
+//   return <div> All there is to know about me </div>;
+// };
 
 // const Nav = (props) => {
 //   return (

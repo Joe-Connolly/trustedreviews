@@ -29,9 +29,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div id="thumbnails">
-        <input className="searchTerm" onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="search" />
-        <button type="button" onClick={this.onSearchSubmit} id="SearchSubmitButton">Submit</button>
+      <div className="input-group mb-3" id="search-bar">
+        <input type="text" className="form-control" onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="Search products" />
+        <button className="btn" id="search-button" type="button" onClick={this.onSearchSubmit}>Search</button>
       </div>
     );
   }
