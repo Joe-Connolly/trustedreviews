@@ -12,7 +12,6 @@ class NewReview extends Component {
       // picture_url: '',
       // company: '',
       // description: '',
-      username: '',
       rating: '',
       ratingBody: '',
     };
@@ -21,7 +20,6 @@ class NewReview extends Component {
     // this.onPictureURLChange = this.onPictureURLChange.bind(this);
     // this.onCompanyChange = this.onCompanyChange.bind(this);
     // this.onDescriptionChange = this.onDescriptionChange.bind(this);
-    this.onUsernameChange = this.onUsernameChange.bind(this);
     this.onRatingChange = this.onRatingChange.bind(this);
     this.onRatingBodyChange = this.onRatingBodyChange.bind(this);
 
@@ -47,10 +45,6 @@ class NewReview extends Component {
   // onDescriptionChange(event) {
   //   this.setState({ description: event.target.value });
   // }
-
-  onUsernameChange(event) {
-    this.setState({ username: event.target.value });
-  }
 
   onRatingChange(event) {
     this.setState({ rating: event.target.value });
@@ -80,7 +74,7 @@ class NewReview extends Component {
 
     const review = {
       body: this.state.ratingBody,
-      username: this.state.username,
+      username: this.props.username,
       rating: this.state.rating,
       product: this.props.current._id,
     };
@@ -111,8 +105,6 @@ class NewReview extends Component {
         <hr />
         Review:
         <br />
-        Username (placeholder): <input onChange={this.onUsernameChange} value={this.state.username} placeholder="username" />
-        <br />
         Rating: <input onChange={this.onRatingChange} value={this.state.rating} placeholder="rating (out of 5 stars)" />
         <br />
         Review Description: <input onChange={this.onRatingBodyChange} value={this.state.ratingBody} placeholder="rating description" />
@@ -127,6 +119,7 @@ class NewReview extends Component {
 const mapStateToProps = state => (
   {
     current: state.review.current,
+    username: state.auth.user.username,
   }
 );
 
