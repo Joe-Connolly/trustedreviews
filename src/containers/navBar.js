@@ -46,7 +46,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <Navbar light expand="md" sticky="top" id="navbar">
+      <Navbar className="navbar-light bg-light" light expand="xs" sticky="top" id="navbar">
         <NavbarBrand href="/">
           <i className="fas fa-pen-square" />
           TRUSTED REVIEWS
@@ -54,14 +54,14 @@ class NavBar extends Component {
         <NavbarToggler onClick={this.toggle} />
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink className="navItem" to="/about">About</NavLink>
+            <NavLink className="btn btn-light navItem" to="/about">About</NavLink>
           </NavItem>
           <NavItem>
             { this.props.auth ? (
-              <NavLink id="navItem" to="/">
-                <span onClick={this.onSignoutSubmit} role="button" tabIndex={0} id="signoutSubmit">Signout</span>
+              <NavLink className="navItem" to="/">
+                <button onClick={this.onSignoutSubmit} type="button" className="btn btn-outline-danger navItem" id="signoutSubmit">Signout</button>
               </NavLink>
-            ) : <NavLink className="navItem" to="/signin" exact>Log In</NavLink>}
+            ) : <NavLink className="btn btn-outline-success navItem" to="/signin" exact>Log In</NavLink>}
           </NavItem>
         </Nav>
       </Navbar>
