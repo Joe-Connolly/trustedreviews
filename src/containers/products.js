@@ -2,6 +2,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
+// import {
+//   Card, CardImg, CardText, CardBody,
+//   CardTitle, CardSubtitle, Button, CardFooter, CardDeck,
+// } from 'reactstrap';
 import { fetchProducts } from '../actions/index';
 // import SearchBar from './searchBar';
 
@@ -12,39 +16,36 @@ class Products extends Component {
     // eslint-disable-next-line max-len
     // const postThumbs = this.props.all.map(post => <NavLink to={`/posts/${post.id}`} className="thumbnail" key={post.id}> <img src={post.cover_url} alt={post.title} /> <Description tags={post.tags} author={post.author} title={post.title} /> </NavLink>);
     // const productTitles = this.props.all.map(product => <h1>{product.title}</h1>);
-    const products = this.props.all.map(product => <Display displayProduct={product} key={product._id} />);
+    const products = this.props.all.map(product => <ProductCard displayProduct={product} key={product._id} />);
 
     return (
-      <div>
-        {/* <SearchBar /> */}
-        {/* <NoteCreator onNoteCreate={this.createNote} />
-        {this.renderNotes(this.state.notes)} */}
-        {/* <p>Here are our product titles</p> */}
-        {/* {postThumbs} */}
-        {/* {productTitles} */}
+      <div id="search-results-container">
         <h1> Search: { this.props.searchTerm } </h1>
-        {products}
+        {/* <CardDeck> */}
+        <div className="card-deck">
+          {products}
+        </div>
+        {/* </CardDeck> */}
       </div>
     );
   }
 }
 
-const Display = (props) => {
+const ProductCard = (props) => {
   return (
-    <div>
+    <div className="card" id="product-card">
+      <div className="card-header">
+        Average Rating: {props.displayProduct.rating}
+      </div>
       <NavLink to={`/product/${props.displayProduct._id}`}>
-        <img src={props.displayProduct.imageURL} alt="Product Img Unavailable" />
-        <br />
-        {props.displayProduct.title}
-        <br />
-        {props.displayProduct.company}
-        <br />
-        {props.displayProduct.rating}
-        <br />
-        {props.displayProduct.numReviews}
+        <img className="card-img-top" src={props.displayProduct.imageURL} alt="Gallery Not Found" />
       </NavLink>
-      <br />
-      <hr />
+      <div className="card-body">
+        <h4 className="card-title">{props.displayProduct.title}</h4>
+        <h5>{props.displayProduct.company}</h5>
+        <p className="card-text">Average Rating: {props.displayProduct.rating}</p>
+        <p className="card-text"><small className="text-muted">{props.displayProduct.numReviews} Reviews</small></p>
+      </div>
     </div>
   );
 };
