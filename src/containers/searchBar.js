@@ -31,7 +31,9 @@ class Home extends Component {
     return (
       <div className="input-group mb-3" id="search-bar">
         <input type="text" className="form-control" onChange={this.onSearchChange} value={this.state.searchTerm} placeholder="Search products" />
-        <button className="btn" id="search-button" type="button" onClick={this.onSearchSubmit}>Search</button>
+        <button className="btn" id="search-button" type="button" onClick={this.onSearchSubmit}>
+          <i className="fas fa-search" />
+        </button>
       </div>
     );
   }

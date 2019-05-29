@@ -5,7 +5,7 @@ body, html {
 
 #navbar {
     height: 80px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .navItem {
@@ -35,7 +35,8 @@ body, html {
 
 #search-button {
     margin-left: 20px;
-    background-color: #F2833C;
+    color: #F2833C;
+    background-color: white;
 }
 
 #search-bar > * {
@@ -54,5 +55,16 @@ body, html {
 }
 
 .main-icon {
-    font-size: 48px;
+    font-size: 60px;
+    color: #F2833C;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.blurb-title {
+    margin-bottom: 10px;
+}
+
+#key-points {
+    margin-bottom: 30px;
 }

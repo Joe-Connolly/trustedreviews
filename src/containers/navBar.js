@@ -54,14 +54,14 @@ class NavBar extends Component {
         <NavbarToggler onClick={this.toggle} />
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink className="btn btn-light navItem" to="/about">About</NavLink>
+            <NavLink className="btn btn-light navItem" to="/about">ABOUT</NavLink>
           </NavItem>
           <NavItem>
             { this.props.auth ? (
               <NavLink className="navItem" to="/">
-                <button onClick={this.onSignoutSubmit} type="button" className="btn btn-outline-danger navItem" id="signoutSubmit">Signout</button>
+                <button onClick={this.onSignoutSubmit} type="button" className="btn btn-outline-danger navItem">SIGN OUT</button>
               </NavLink>
-            ) : <NavLink className="btn btn-outline-success navItem" to="/signin" exact>Log In</NavLink>}
+            ) : <NavLink className="btn btn-outline-success navItem" to="/signin" exact>LOG IN</NavLink>}
           </NavItem>
         </Nav>
       </Navbar>
