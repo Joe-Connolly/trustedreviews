@@ -38,7 +38,7 @@ body, html {
 
 #search-bar {
     margin-top: 15px;
-    width: 50vw;
+    width: 40vw;
 }
 
 #search-button {
@@ -53,7 +53,7 @@ body, html {
 }
 
 #login, #signup {
-    height: 90vh;
+    height: 95vh;
 }
 
 #login-image {
@@ -163,4 +163,8 @@ body, html {
 
 #rating {
     margin-bottom: 20px;
+}
+
+.profile-card {
+    height: 300px;
 }

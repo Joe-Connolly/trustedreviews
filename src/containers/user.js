@@ -23,7 +23,7 @@ class User extends Component {
     return (
       <div className="container-fluid">
         <h2>{this.props.user.username}</h2>
-        <h4>Reputation: {this.props.user.reputation}</h4>
+        <h4>Number of Reviews: {this.props.user.numReviews}</h4>
         <div className="card-columns">
           {reviews}
         </div>
