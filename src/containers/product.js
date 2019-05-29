@@ -22,7 +22,7 @@ class Product extends Component {
     console.log(reviews);
 
     return (
-      <div className="container-fluid" id="main-card-container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-12">
             <div className="card shadow">
