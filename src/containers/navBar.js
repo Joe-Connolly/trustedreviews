@@ -3,12 +3,12 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
 } from 'reactstrap';
 import { signoutUser } from '../actions/index';
+import SearchBar from './searchBar';
 
 class NavBar extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ class NavBar extends Component {
           <i className="fas fa-pen-square" />
           TRUSTED REVIEWS
         </NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
+        <SearchBar />
         <Nav className="ml-auto" navbar>
           <NavItem>
             <NavLink className="btn btn-light navItem" to="/about">ABOUT</NavLink>
