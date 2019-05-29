@@ -22,11 +22,9 @@ const ReviewReducer = (state = initialState, action) => {
     case ActionTypes.CREATE_REVIEW:
       return state;
     case ActionTypes.UPVOTE:
-      return state;
-      // return Object.assign({}, state, { current: action.payload });
+      return Object.assign({}, state, { current: action.payload.product });
     case ActionTypes.DOWNVOTE:
-      return state;
-      // return Object.assign({}, state, { current: action.payload });
+      return Object.assign({}, state, { current: action.payload.product });
     default:
       return state;
   }
