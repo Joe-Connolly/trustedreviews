@@ -60,7 +60,7 @@ class Signup extends Component {
       <div id="thumbnails">
         <input onChange={this.onUsernameChange} value={this.state.username} placeholder="username" />
         <br />
-        <input onChange={this.onEmailChange} value={this.state.email} placeholder="email" />
+        <input type="email" onChange={this.onEmailChange} value={this.state.email} placeholder="email" />
         <br />
         <input onChange={this.onPasswordChange} value={this.state.password} placeholder="password" type="password" />
         <br />

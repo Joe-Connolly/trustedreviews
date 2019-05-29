@@ -57,7 +57,7 @@ class Signin extends Component {
                     <h3 className="font-weight-light mb-4">Welcome back!</h3>
                     <form>
                       <div className="form-label-group">
-                        <input type="email" className="form-control" onChange={this.onUsernameChange} value={this.state.username} placeholder="Username" required />
+                        <input className="form-control" onChange={this.onUsernameChange} value={this.state.username} placeholder="Username" required />
                       </div>
                       <div className="form-label-group">
                         <input type="password" className="form-control" onChange={this.onPasswordChange} value={this.state.password} placeholder="Password" required />
