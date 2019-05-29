@@ -21,8 +21,8 @@ export const ActionTypes = {
   SEARCH_CHANGED: 'SEARCH_CHANGED',
 };
 
-// const ROOT_URL = 'http://localhost:9090/api';
-const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
+const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://trusted-reviews.herokuapp.com/api';
 const API_KEY = '';
 
 /* Review and product functions */
@@ -140,6 +140,7 @@ export function signinUser({ username, password }, history) {
         history.push('/');
       })
       .catch((error) => {
+        console.log('error');
         dispatch(authError(`Sign In Failed: ${error.response.data}`));
       });
   };
@@ -173,7 +174,7 @@ export function upvote(review) {
     axios.put(`${ROOT_URL}/reviews/upvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       // do something with response.data  (some json)
       dispatch({ type: ActionTypes.UPVOTE, payload: response.data });
-      document.location.reload(true);
+      // document.location.reload(true);
     }).catch((error) => {
       // hit an error do something else!
       console.log(`Oh no!! Failed to upvote for review ${review._id}.`);
@@ -186,7 +187,7 @@ export function downvote(review) {
     axios.put(`${ROOT_URL}/reviews/downvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {
       // do something with response.data  (some json)
       dispatch({ type: ActionTypes.DOWNVOTE, payload: response.data });
-      document.location.reload(true);
+      // document.location.reload(true);
     }).catch((error) => {
       // hit an error do something else!
       console.log(`Oh no!! Failed to downvote for review ${review._id}.`);

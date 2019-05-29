@@ -3,7 +3,7 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
   Navbar,
-  NavbarBrand,
+  // NavbarBrand,
   Nav,
   NavItem,
 } from 'reactstrap';
@@ -47,10 +47,10 @@ class NavBar extends Component {
   render() {
     return (
       <Navbar className="navbar-light bg-light" light expand="xs" sticky="top" id="navbar">
-        <NavbarBrand href="/">
+        <NavLink to="/" exact id="companyLogo">
           <i className="fas fa-pen-square" id="logo-icon" />
           TRUSTED REVIEWS
-        </NavbarBrand>
+        </NavLink>
         <SearchBar />
         <Nav className="ml-auto" navbar>
           <NavItem>

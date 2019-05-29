@@ -19,7 +19,7 @@ class Signup extends Component {
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onConfirmedPasswordChange = this.onConfirmedPasswordChange.bind(this);
 
-    this.onSignupSubmit = this.onSignupSubmit.bind(this);
+    // this.onSignupSubmit = this.onSignupSubmit.bind(this);
   }
 
   onUsernameChange(event) {
@@ -39,7 +39,9 @@ class Signup extends Component {
   }
 
 
-  onSignupSubmit() {
+  onSignupSubmit = (e) => {
+    console.log('sign up submit');
+    e.preventDefault();
     if (this.state.password !== this.state.confirmedPassword) {
       console.log('Passwords do not match.');
     } else {
@@ -91,7 +93,7 @@ class Signup extends Component {
                       <div className="form-label-group">
                         <input type="password" className="form-control" onChange={this.onConfirmedPasswordChange} value={this.state.confirmedPassword} placeholder="Confirm Password" required />
                       </div>
-                      <button className="btn btn-lg btn-primary btn-block font-weight-bold mb-2" id="submit-button" type="submit" onClick={this.onSigninSubmit}>Sign Up</button>
+                      <button className="btn btn-lg btn-primary btn-block font-weight-bold mb-2" id="submit-button" type="submit" onClick={(e) => { this.onSignupSubmit(e); }}>Sign Up</button>
                       <div className="text-center">
                         <NavLink to="/signin" exact>Sign In</NavLink>
                       </div>
