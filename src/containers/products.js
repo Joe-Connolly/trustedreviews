@@ -54,7 +54,7 @@ const ProductCard = (props) => {
       <div className="card-body">
         <h4 className="card-title">{props.displayProduct.title}</h4>
         <h5>{props.displayProduct.company}</h5>
-        <p className="card-text"><i className="fas fa-star" id="rating-star" /> {props.displayProduct.rating}</p>
+        <p className="card-text"><i className="fas fa-star rating-star" /> {props.displayProduct.rating}</p>
         <p className="card-text"><small className="text-muted">{props.displayProduct.numReviews} Reviews</small></p>
       </div>
     </div>
