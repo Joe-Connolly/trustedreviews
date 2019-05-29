@@ -19,13 +19,24 @@ class Products extends Component {
     const products = this.props.all.map(product => <ProductCard displayProduct={product} key={product._id} />);
 
     return (
-      <div id="search-results-container">
-        <h1> Search: { this.props.searchTerm } </h1>
-        {/* <CardDeck> */}
-        <div className="card-deck">
-          {products}
+      <div>
+        <header className="text-center py-5 mb-4 page-header">
+          <div className="container">
+            { this.props.searchTerm !== '' ? (
+              <h1 className="font-weight-light text-white">
+                &quot;{ this.props.searchTerm }&quot;
+              </h1>
+            ) : <h1 className="font-weight-light text-white">All Products</h1>
+            }
+          </div>
+        </header>
+        <div id="search-results-container">
+          {/* <CardDeck> */}
+          <div className="card-deck">
+            {products}
+          </div>
+          {/* </CardDeck> */}
         </div>
-        {/* </CardDeck> */}
       </div>
     );
   }
@@ -34,16 +45,16 @@ class Products extends Component {
 const ProductCard = (props) => {
   return (
     <div className="card" id="product-card">
-      <div className="card-header">
+      {/* <div className="card-header">
         Average Rating: {props.displayProduct.rating}
-      </div>
+      </div> */}
       <NavLink to={`/product/${props.displayProduct._id}`}>
         <img className="card-img-top" src={props.displayProduct.imageURL} alt="Gallery Not Found" />
       </NavLink>
       <div className="card-body">
         <h4 className="card-title">{props.displayProduct.title}</h4>
         <h5>{props.displayProduct.company}</h5>
-        <p className="card-text">Average Rating: {props.displayProduct.rating}</p>
+        <p className="card-text"><i className="fas fa-star" id="rating-star" /> {props.displayProduct.rating}</p>
         <p className="card-text"><small className="text-muted">{props.displayProduct.numReviews} Reviews</small></p>
       </div>
     </div>

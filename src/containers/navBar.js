@@ -48,7 +48,7 @@ class NavBar extends Component {
     return (
       <Navbar className="navbar-light bg-light" light expand="xs" sticky="top" id="navbar">
         <NavbarBrand href="/">
-          <i className="fas fa-pen-square" />
+          <i className="fas fa-pen-square" id="logo-icon" />
           TRUSTED REVIEWS
         </NavbarBrand>
         <SearchBar />

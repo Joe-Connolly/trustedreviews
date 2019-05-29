@@ -5,7 +5,7 @@ class About extends Component {
   render() {
     return (
       <div>
-        <header className="bg-primary text-center py-5 mb-4">
+        <header className="text-center py-5 mb-4 page-header">
           <div className="container">
             <h1 className="font-weight-light text-white">Meet the Team</h1>
           </div>
@@ -14,7 +14,7 @@ class About extends Component {
           <div className="row">
             <div className="col-xl-3 col-md-6 mb-4">
               <div className="card border-0 shadow">
-                <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" className="card-img-top" alt="..." />
+                <img src="../img/shoesOnWall" className="card-img-top" alt="Soren Thompson" />
                 <div className="card-body text-center">
                   <h5 className="card-title mb-0">Team Member</h5>
                   <div className="card-text text-black-50">Web Developer</div>
@@ -54,7 +54,6 @@ class About extends Component {
     );
   }
 }
-
 
 // connects particular parts of redux state to this components props
 // const mapStateToProps = state => (
