@@ -14,10 +14,10 @@ class About extends Component {
           <div className="row">
             <div className="col-xl-3 col-md-6 mb-4">
               <div className="card border-0 shadow">
-                <img src="../img/shoesOnWall" className="card-img-top" alt="Soren Thompson" />
+                <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" className="card-img-top" alt="Soren Thompson" />
                 <div className="card-body text-center">
-                  <h5 className="card-title mb-0">Team Member</h5>
-                  <div className="card-text text-black-50">Web Developer</div>
+                  <h5 className="card-title mb-0">Joe Connolly</h5>
+                  <div className="card-text text-black-50">Dartmouth &apos;19</div>
                 </div>
               </div>
             </div>
@@ -25,8 +25,8 @@ class About extends Component {
               <div className="card border-0 shadow">
                 <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" className="card-img-top" alt="..." />
                 <div className="card-body text-center">
-                  <h5 className="card-title mb-0">Team Member</h5>
-                  <div className="card-text text-black-50">Web Developer</div>
+                  <h5 className="card-title mb-0">RJ Yang</h5>
+                  <div className="card-text text-black-50">Dartmouth &apos;19</div>
                 </div>
               </div>
             </div>
@@ -34,8 +34,8 @@ class About extends Component {
               <div className="card border-0 shadow">
                 <img src="https://source.unsplash.com/sNut2MqSmds/500x350" className="card-img-top" alt="..." />
                 <div className="card-body text-center">
-                  <h5 className="card-title mb-0">Team Member</h5>
-                  <div className="card-text text-black-50">Web Developer</div>
+                  <h5 className="card-title mb-0">Soren Thompson</h5>
+                  <div className="card-text text-black-50">Dartmouth &apos;20</div>
                 </div>
               </div>
             </div>
@@ -43,8 +43,8 @@ class About extends Component {
               <div className="card border-0 shadow">
                 <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" className="card-img-top" alt="..." />
                 <div className="card-body text-center">
-                  <h5 className="card-title mb-0">Team Member</h5>
-                  <div className="card-text text-black-50">Web Developer</div>
+                  <h5 className="card-title mb-0">Shreyas Agnihotri</h5>
+                  <div className="card-text text-black-50">Dartmouth &apos;21</div>
                 </div>
               </div>
             </div>
