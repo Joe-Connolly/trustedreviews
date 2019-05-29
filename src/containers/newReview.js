@@ -79,7 +79,11 @@ class NewReview extends Component {
       product: this.props.current._id,
     };
 
-    this.props.createReview(review, this.props.history);
+    if (review.rating === '1' || review.rating === '2' || review.rating === '3' || review.rating === '4' || review.rating === '5') {
+      this.props.createReview(review, this.props.history);
+    } else {
+      console.log('Rating must be an integer between 1 and 5');
+    }
   }
 
   render() {
