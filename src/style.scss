@@ -45,14 +45,20 @@ body, html {
     border-width: 0px;
 }
 
-#login {
-  height: 90vh;
+#login, #signup {
+    height: 90vh;
 }
 
 #login-image {
-  background-image: url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80');
-  background-size: cover;
-  background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+#signup-image {
+    background-image: url('https://images.unsplash.com/photo-1494861895304-fb272971c078?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
 }
 
 .main-icon {
@@ -68,4 +74,86 @@ body, html {
 
 #key-points {
     margin-bottom: 30px;
+}
+
+#product-card {
+    max-width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#search-results-container {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.page-header {
+    background-color: #F2833C;
+}
+
+#submit-button, #write-review-button {
+    background-color: #F2833C;
+    border: none;
+}
+
+#submit-button {
+    margin-top: 20px;
+}
+
+#logo-icon {
+    font-size: 25px;
+    color: #F2833C;
+    margin-right: 10px;
+
+}
+
+.rating-star {
+    color: #F2833C;
+}
+
+#main-rating-star {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.form-label-group {
+    margin-top: 10px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+#main-product-image {
+    max-width: 50vw;
+    max-height: 70vh;
+}
+
+.container-fluid {
+    margin-top: 20px;
+}
+
+#downvote-button {
+    margin-left: 20px;
+}
+
+#review-card {
+    padding: 20px;
+}
+
+.card-columns {
+    margin-top: 30px;
+}
+
+#description {
+    margin-top: 20px;
+}
+
+.vote-button {
+    background-color: white;
+    border-radius: 100px;
+}
+
+#rating {
+    margin-bottom: 20px;
 }
