@@ -21,30 +21,38 @@ class Home extends Component {
         </div>
 
         <div className="container">
-          <div className="row">
+          <div className="row" id="key-points">
             <div className="col-lg-4">
-              <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 text-center">
-                <i className="fas fa-camera main-icon" />
-                <h3>Fully Responsive</h3>
-                <p className="lead mb-0">This theme will look great on any device, no matter the size!</p>
+              <div className="mx-auto mb-5 mb-lg-0 mb-lg-3 text-center">
+                <i className="fas fa-cart-plus main-icon" />
+                <h3 className="blurb-title">Built for Business</h3>
+                <p className="lead mb-0">
+                  Retailers can use our secure API to embed verified,
+                  pre-styled reviews directly within their sites.
+                  Detailed documentation will be released soon!
+                </p>
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                {/* <div className="features-icons-icon d-flex">
-                  <i className="icon-layers m-auto text-primary" />
-                </div> */}
-                <h3>Bootstrap 4 Ready</h3>
-                <p className="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+              <div className="mx-auto mb-5 mb-lg-0 mb-lg-3 text-center">
+                <i className="fas fa-lock main-icon" />
+                <h3 className="blurb-title">Safe and Secure</h3>
+                <p className="lead mb-0">
+                  All data, from user passwords to the reviews themselves,
+                  are stored in a secure MongoDB cloud database deployed on Heroku,
+                  accessible only with a secret key.
+                </p>
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="features-icons-item mx-auto mb-0 mb-lg-3">
-                {/* <div className="features-icons-icon d-flex">
-                  <i className="icon-check m-auto text-primary" />
-                </div> */}
-                <h3>Easy to Use</h3>
-                <p className="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+              <div className="mx-auto mb-0 mb-lg-3 text-center">
+                <i className="fas fa-users main-icon" />
+                <h3 className="blurb-title">Pushed by People</h3>
+                <p className="lead mb-0">
+                  Trusted Reviews is meant to combat the fake review epidemic,
+                  starting with a voting system to allow the most helpful reviews
+                  to rise to the top.
+                </p>
               </div>
             </div>
           </div>

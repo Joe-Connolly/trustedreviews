@@ -15,13 +15,14 @@ class Products extends Component {
     const products = this.props.all.map(product => <Display displayProduct={product} key={product._id} />);
 
     return (
-      <div id="thumbnails">
+      <div>
         {/* <SearchBar /> */}
         {/* <NoteCreator onNoteCreate={this.createNote} />
         {this.renderNotes(this.state.notes)} */}
         {/* <p>Here are our product titles</p> */}
         {/* {postThumbs} */}
         {/* {productTitles} */}
+        <h1> Search: { this.props.searchTerm } </h1>
         {products}
       </div>
     );
@@ -77,6 +78,7 @@ const Display = (props) => {
 // connects particular parts of redux state to this components props
 const mapStateToProps = state => (
   {
+    searchTerm: state.search.searchTerm,
     all: state.review.all,
   }
 );
