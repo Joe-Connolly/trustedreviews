@@ -27,7 +27,8 @@ class Signin extends Component {
   }
 
 
-  onSigninSubmit() {
+  onSigninSubmit(e) {
+    e.preventDefault();
     console.log(this.state.username);
     this.props.signinUser({
       username: this.state.username,
@@ -62,7 +63,7 @@ class Signin extends Component {
                       <div className="form-label-group">
                         <input type="password" className="form-control" onChange={this.onPasswordChange} value={this.state.password} placeholder="Password" required />
                       </div>
-                      <button className="btn btn-lg btn-primary btn-block font-weight-bold mb-2" id="submit-button" type="submit" onClick={this.onSigninSubmit}>Sign in</button>
+                      <button className="btn btn-lg btn-primary btn-block font-weight-bold mb-2" type="submit" onClick={(e) => { this.onSigninSubmit(e); }}>Sign in</button>
                       <div className="text-center">
                         <NavLink to="/signup" exact>Sign Up</NavLink>
                       </div>
