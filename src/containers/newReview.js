@@ -67,7 +67,8 @@ class NewReview extends Component {
   //   this.props.createProduct(newProduct, this.props.history);
   // }
 
-  onNewReviewSubmit() {
+  onNewReviewSubmit(e) {
+    e.preventDefault();
     console.log(this.state.username);
     console.log(this.state.rating);
     console.log(this.state.ratingBody);
@@ -113,7 +114,7 @@ class NewReview extends Component {
         <br />
         Review Description: <input onChange={this.onRatingBodyChange} value={this.state.ratingBody} placeholder="rating description" />
         <br />
-        <button type="button" onClick={this.onNewReviewSubmit}>Submit</button>
+        <button type="submit" className="btn btn-primary" id="submit-button" onClick={(e) => { this.onNewReviewSubmit(e); }}>Submit</button>
       </div>
     );
   }
