@@ -16,7 +16,7 @@ body, html {
 }
 
 .navItem {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .jumbotron {
@@ -30,10 +30,6 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#banner-content {
-    margin-left: 20px;
 }
 
 #search-bar {
@@ -53,19 +49,21 @@ body, html {
 }
 
 #login, #signup {
-    height: 95vh;
+    height: 90vh;
 }
 
 #login-image {
     background-image: url('https://images.unsplash.com/photo-1511556820780-d912e42b4980?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80');
     background-size: cover;
-    background-position: center;
+    margin-top: -20px;
+    // background-position: center;
 }
 
 #signup-image {
     background-image: url('https://images.unsplash.com/photo-1494861895304-fb272971c078?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
+    margin-top: -20px;
 }
 
 .main-icon {
@@ -97,20 +95,15 @@ body, html {
     background-color: #F2833C;
 }
 
-#submit-button, #write-review-button {
+#new-review-submit-button, #sign-in-submit-button, #sign-up-submit-button, #write-review-button {
     background-color: #F2833C;
     border: none;
-}
-
-#submit-button {
-    margin-top: 20px;
 }
 
 #logo-icon {
     font-size: 25px;
     color: #F2833C;
     margin-right: 10px;
-
 }
 
 .rating-star {
@@ -136,11 +129,7 @@ body, html {
     max-height: 70vh;
 }
 
-.container-fluid {
-    margin-top: 20px;
-}
-
-#downvote-button {
+#downvote-button, #banner-content {
     margin-left: 20px;
 }
 
@@ -148,11 +137,11 @@ body, html {
     padding: 20px;
 }
 
-.card-columns {
+.card-columns, #new-review-title {
     margin-top: 30px;
 }
 
-#description {
+#description, .container-fluid, #new-review-submit-button, #sign-in-submit-button, #sign-up-submit-button {
     margin-top: 20px;
 }
 

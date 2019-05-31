@@ -89,32 +89,51 @@ class NewReview extends Component {
 
   render() {
     return (
-      <div id="thumbnails">
-        {/* <input onChange={this.onTitleChange} value={this.state.title} placeholder="product title" />
-        <br />
-        <input onChange={this.onPictureURLChange} value={this.state.picture_url} placeholder="product picture URL" />
-        <br />
-        <input onChange={this.onCompanyChange} value={this.state.company} placeholder="product company" />
-        <br />
-        <input onChange={this.onDescriptionChange} value={this.state.description} placeholder="product description" />
-        <br /> */}
-
-        <img src={this.props.current.imageURL} alt="Product Img Unavailable" />
-        <br />
-        {this.props.current.title}
-        <br />
-        Company: {this.props.current.company}
-        <br />
-        Description: {this.props.discription}
-        <br />
-        <hr />
-        Review:
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-12">
+            <div className="card shadow">
+              <div className="card-horizontal">
+                <div>
+                  <img id="main-product-image"
+                    src={this.props.current.imageURL}
+                    alt="Product Img Unavailable"
+                  />
+                </div>
+                <div className="card-body">
+                  <h3 className="my-3">{this.props.current.title}</h3>
+                  <h4 className="my-4">{this.props.current.company}</h4>
+                  <p>{this.props.current.description}</p>
+                  <h3 className="my-3"><i className="fas fa-star rating-star" id="main-rating-star" />{this.props.current.rating}</h3>
+                  <p>{this.props.current.numReviews} reviews</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 id="new-review-title">Review</h1>
+        <div className="form-group">
+          <h5>Rating</h5>
+          <select onChange={this.onRatingChange} value={this.state.rating} className="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <h5>Review</h5>
+          <textarea onChange={this.onRatingBodyChange} value={this.state.ratingBody} className="form-control" rows="3" />
+        </div>
+        <button type="submit" className="btn btn-primary" id="new-review-submit-button" onClick={this.onNewReviewSubmit}>Submit</button>
+        {/* Review:
         <br />
         Rating: <input onChange={this.onRatingChange} value={this.state.rating} placeholder="rating (out of 5 stars)" />
         <br />
         Review Description: <input onChange={this.onRatingBodyChange} value={this.state.ratingBody} placeholder="rating description" />
         <br />
-        <button type="submit" className="btn btn-primary" id="submit-button" onClick={(e) => { this.onNewReviewSubmit(e); }}>Submit</button>
+        <button type="button" onClick={this.onNewReviewSubmit}>Submit</button> */}
       </div>
     );
   }
