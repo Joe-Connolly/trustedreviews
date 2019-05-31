@@ -169,6 +169,7 @@ export function signoutUser(history) {
 }
 
 /* Upvote/Downvote functions */
+
 export function upvote(review) {
   return (dispatch) => {
     axios.put(`${ROOT_URL}/reviews/upvote${API_KEY}`, review, { headers: { authorization: localStorage.getItem('token') } }).then((response) => {

@@ -45,6 +45,10 @@ To deploy frontend:
 
 `yarn deploy`
 
+## Testing
+
+Please note while testing that some pages may take a moment to load! If a given action appears to have no impact on the page, be sure to check the console for error logs. For example, if a new user account is submitted without the password confirmation matching the original password, the user will not be created and an error will be logged in the console.
+
 ## Authors
 
 Shreyas Agnihotri, Joseph Connolly, Soren Thompson, Richard Yang

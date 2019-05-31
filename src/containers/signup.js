@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
-// import { withRouter } from 'react-router-dom';
 import { signupUser, signinUser } from '../actions/index';
 
 class Signup extends Component {
@@ -18,8 +17,6 @@ class Signup extends Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
     this.onConfirmedPasswordChange = this.onConfirmedPasswordChange.bind(this);
-
-    // this.onSignupSubmit = this.onSignupSubmit.bind(this);
   }
 
   onUsernameChange(event) {
@@ -40,37 +37,20 @@ class Signup extends Component {
 
 
   onSignupSubmit = (e) => {
-    console.log('sign up submit');
     e.preventDefault();
     if (this.state.password !== this.state.confirmedPassword) {
       console.log('Passwords do not match.');
     } else {
-      console.log(this.state.username);
       this.props.signupUser({
         email: this.state.email,
         password: this.state.password,
         username: this.state.username,
       }, this.props.history);
-      // this.props.signinUser({
-      //   username: this.state.username,
-      //   password: this.state.password,
-      // });
     }
   }
 
   render() {
     return (
-      // <div id="thumbnails">
-      //   <input onChange={this.onUsernameChange} value={this.state.username} placeholder="username" />
-      //   <br />
-      //   <input type="email" onChange={this.onEmailChange} value={this.state.email} placeholder="email" />
-      //   <br />
-      //   <input onChange={this.onPasswordChange} value={this.state.password} placeholder="password" type="password" />
-      //   <br />
-      //   <input onChange={this.onConfirmedPasswordChange} value={this.state.confirmedPassword} placeholder="confirm password" type="password" />
-      //   <br />
-      //   <button type="button" onClick={this.onSignupSubmit}>Submit</button>
-      // </div>
       <div className="container-fluid">
         <div className="row no-gutter">
           <div className="d-none d-md-flex col-md-4 col-lg-6" id="signup-image" />
@@ -108,14 +88,6 @@ class Signup extends Component {
     );
   }
 }
-
-
-// connects particular parts of redux state to this components props
-// const mapStateToProps = state => (
-//   {
-//     // all: state.products.all,
-//   }
-// );
 
 // react-redux glue -- outputs Container that know state in props
 // also with an optional HOC withRouter

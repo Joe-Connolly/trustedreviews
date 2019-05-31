@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
 import { fetchUser } from '../actions/index';
 
-
 // this can be dumb or smart component - connect works with either
 class User extends Component {
   constructor(props) {
@@ -33,26 +32,8 @@ class User extends Component {
 }
 
 const ReviewDisplay = (props) => {
-  // return (
-  //   <div>
-  //     {/* <img src={props.displayReview.imageURL} alt="Product Img Unavailable" />
-  //       <br /> */}
-  //     <hr />
-  //     <NavLink to={`/product/${props.displayReview.product._id}`}>
-  //       {props.displayReview.product.title}
-  //     </NavLink>
-  //     <br />
-  //     {props.displayReview.product.company}
-  //     <br />
-  //     {props.displayReview.rating}
-  //     <br />
-  //     {props.displayReview.body}
-  //   </div>
-  // );
   return (
     <div>
-      {/* <img src={props.displayReview.imageURL} alt="Product Img Unavailable" />
-      <br /> */}
       <div className="card shadow" id="review-card">
         <NavLink to={`/product/${props.displayReview.product._id}`}>
           <h3>{props.displayReview.product.title}</h3>
@@ -60,7 +41,6 @@ const ReviewDisplay = (props) => {
         <h6 className="text-muted">{props.displayReview.product.company}</h6>
         <h5 className="card-text" id="rating"><i className="fas fa-star rating-star" /> {props.displayReview.rating}</h5>
         <p id="description">{props.displayReview.body}</p>
-        {/* Helpful Ratio: {props.up /props.down} */}
       </div>
     </div>
   );
