@@ -93,7 +93,7 @@ class Signup extends Component {
                       <div className="form-label-group">
                         <input type="password" className="form-control" onChange={this.onConfirmedPasswordChange} value={this.state.confirmedPassword} placeholder="Confirm Password" required />
                       </div>
-                      <button className="btn btn-lg btn-primary btn-block font-weight-bold mb-2" id="submit-button" type="submit" onClick={(e) => { this.onSignupSubmit(e); }}>Sign Up</button>
+                      <button className="btn btn-lg btn-primary btn-block font-weight-bold mb-2" id="sign-up-submit-button" type="submit" onClick={(e) => { this.onSignupSubmit(e); }}>Sign Up</button>
                       <div className="text-center">
                         <NavLink to="/signin" exact>Sign In</NavLink>
                       </div>
