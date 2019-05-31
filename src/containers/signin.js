@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, NavLink } from 'react-router-dom';
-// import { withRouter } from 'react-router-dom';
 import { signinUser } from '../actions/index';
 
 class Signin extends Component {
@@ -29,7 +28,6 @@ class Signin extends Component {
 
   onSigninSubmit(e) {
     e.preventDefault();
-    console.log(this.state.username);
     this.props.signinUser({
       username: this.state.username,
       password: this.state.password,
@@ -38,15 +36,6 @@ class Signin extends Component {
 
   render() {
     return (
-      /* <div id="thumbnails">
-        <input onChange={this.onUsernameChange} value={this.state.username} placeholder="username" />
-        <br />
-        <input onChange={this.onPasswordChange} value={this.state.password} placeholder="password" type="password" />
-        <br />
-        <button type="button" onClick={this.onSigninSubmit}>Submit</button>
-        <br />
-        <NavLink to="/signup" exact>Sign Up</NavLink>
-      </div> */
       <div className="container-fluid">
         <div className="row no-gutter">
           <div className="d-none d-md-flex col-md-4 col-lg-6" id="login-image" />
@@ -78,14 +67,6 @@ class Signin extends Component {
     );
   }
 }
-
-
-// connects particular parts of redux state to this components props
-// const mapStateToProps = state => (
-//   {
-//     // all: state.products.all,
-//   }
-// );
 
 // react-redux glue -- outputs Container that know state in props
 // also with an optional HOC withRouter

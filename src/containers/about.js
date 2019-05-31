@@ -55,11 +55,4 @@ class About extends Component {
   }
 }
 
-// connects particular parts of redux state to this components props
-// const mapStateToProps = state => (
-//   {
-//     // all: state.products.all,
-//   }
-// );
-
 export default About;

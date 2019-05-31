@@ -17,22 +17,6 @@ import UnRequireAuth from '../containers/unRequireAuth';
 import Nav from '../containers/navBar';
 import Embed from '../containers/embed';
 
-// const About = (props) => {
-//   return <div> All there is to know about me </div>;
-// };
-
-// const Nav = (props) => {
-//   return (
-//     <nav>
-//       <ul id="nav">
-//         <li><NavLink id="navItem" to="/" exact>LOGO</NavLink></li>
-//         <li><NavLink id="navItem" to="/about">About</NavLink></li>
-//         <li><NavLink id="navItem" to="/signin" exact>Log In</NavLink></li>
-//       </ul>
-//     </nav>
-//   );
-// };
-
 const FallBack = (props) => {
   return <div>URL Not Found</div>;
 };
@@ -62,7 +46,5 @@ const App = (props) => {
     </Router>
   );
 };
-
-// ReactDOM.render(<App />, document.getElementById('main'));
 
 export default App;

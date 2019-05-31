@@ -3,23 +3,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchProduct, createReview } from '../actions/index';
 
-
 class NewReview extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // title: '',
-      // picture_url: '',
-      // company: '',
-      // description: '',
       rating: '3',
       ratingBody: '',
     };
 
-    // this.onTitleChange = this.onTitleChange.bind(this);
-    // this.onPictureURLChange = this.onPictureURLChange.bind(this);
-    // this.onCompanyChange = this.onCompanyChange.bind(this);
-    // this.onDescriptionChange = this.onDescriptionChange.bind(this);
     this.onRatingChange = this.onRatingChange.bind(this);
     this.onRatingBodyChange = this.onRatingBodyChange.bind(this);
 
@@ -30,22 +21,6 @@ class NewReview extends Component {
     this.props.fetchProduct(this.props.match.params.id);
   }
 
-  // onTitleChange(event) {
-  //   this.setState({ title: event.target.value });
-  // }
-
-  // onPictureURLChange(event) {
-  //   this.setState({ picture_url: event.target.value });
-  // }
-
-  // onCompanyChange(event) {
-  //   this.setState({ company: event.target.value });
-  // }
-
-  // onDescriptionChange(event) {
-  //   this.setState({ description: event.target.value });
-  // }
-
   onRatingChange(event) {
     this.setState({ rating: event.target.value });
   }
@@ -54,24 +29,8 @@ class NewReview extends Component {
     this.setState({ ratingBody: event.target.value });
   }
 
-  // onNewReviewSubmit() {
-  //   console.log(this.state.title);
-  //   const newProduct = {
-  //     title: this.state.title,
-  //     imageURL: this.state.picture_url,
-  //     company: this.state.company,
-  //     rating: this.state.rating,
-  //     numReviews: 1,
-  //     description: this.state.description,
-  //   };
-  //   this.props.createProduct(newProduct, this.props.history);
-  // }
-
   onNewReviewSubmit(e) {
     e.preventDefault();
-    console.log(this.state.username);
-    console.log(this.state.rating);
-    console.log(this.state.ratingBody);
 
     const review = {
       body: this.state.ratingBody,
@@ -127,13 +86,6 @@ class NewReview extends Component {
           <textarea onChange={this.onRatingBodyChange} value={this.state.ratingBody} className="form-control" rows="3" />
         </div>
         <button type="submit" className="btn btn-primary" id="new-review-submit-button" onClick={this.onNewReviewSubmit}>Submit</button>
-        {/* Review:
-        <br />
-        Rating: <input onChange={this.onRatingChange} value={this.state.rating} placeholder="rating (out of 5 stars)" />
-        <br />
-        Review Description: <input onChange={this.onRatingBodyChange} value={this.state.ratingBody} placeholder="rating description" />
-        <br />
-        <button type="button" onClick={this.onNewReviewSubmit}>Submit</button> */}
       </div>
     );
   }

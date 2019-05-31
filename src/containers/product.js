@@ -19,7 +19,6 @@ class Product extends Component {
   render() {
     // eslint-disable-next-line max-len
     const reviews = this.props.current.reviews.map(review => <ReviewDisplay displayReview={review} key={review._id} upvote={this.props.upvote} downvote={this.props.downvote} history={this.props.history} auth={this.props.auth} />);
-    console.log(reviews);
 
     return (
       <div className="container-fluid">
@@ -63,14 +62,12 @@ const ReviewDisplay = (props) => {
 
   return (
     <div>
-      {/* <img src={props.displayReview.imageURL} alt="Product Img Unavailable" />
-      <br /> */}
       <div className="card shadow" id="review-card">
         <NavLink to={`/user/${props.displayReview.username}`}>
           <h3>{props.displayReview.username}</h3>
         </NavLink>
         <h5 className="card-text" id="rating"><i className="fas fa-star rating-star" /> {props.displayReview.rating}</h5>
-        {/* Placeholder buttons */}
+
         <button type="button"
           className="vote-button"
           onClick={() => {
@@ -82,6 +79,7 @@ const ReviewDisplay = (props) => {
           }}
         ><i className="fas fa-thumbs-up" />
         </button> {props.displayReview.numUpvotes}
+
         <button type="button"
           id="downvote-button"
           className="vote-button"
@@ -94,8 +92,8 @@ const ReviewDisplay = (props) => {
           }}
         ><i className="fas fa-thumbs-down" />
         </button> {props.displayReview.numDownvotes}
+
         <p id="description">{props.displayReview.body}</p>
-        {/* Helpful Ratio: {props.up /props.down} */}
       </div>
     </div>
   );

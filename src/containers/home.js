@@ -62,14 +62,6 @@ class Home extends Component {
   }
 }
 
-
-// connects particular parts of redux state to this components props
-// const mapStateToProps = state => (
-//   {
-//     // all: state.products.all,
-//   }
-// );
-
 // react-redux glue -- outputs Container that know state in props
 // also with an optional HOC withRouter
 export default withRouter(connect(null, { fetchProducts })(Home));
