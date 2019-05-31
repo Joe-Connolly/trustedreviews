@@ -17,15 +17,11 @@ Be sure to check out all of the features below while using the site!
 
 ## Architecture
 
-TODO:  descriptions of code organization and tools and libraries used
-
 The frontend of this app is built on top of the front-end starterpack built by Tim Tregubov, utilizing webpack, babel, eslint, sass, react/reactrouter, redux, express, and mongo.
 
 The backend of this app is a mongoDB database using mongoose for schema-based models and Heroku for deployment.  Access the backend here: https://github.com/dartmouth-cs52-19S/project-api-trustedreviews
 
 ## Setup
-
-TODO: how to get the project dev environment up and running, npm install etc
 
 To setup the frontend dev environment:
 
@@ -35,15 +31,28 @@ To setup the frontend dev environment:
 2. Install node.js and yarn
   * `brew install node`
   * `brew install yarn`
-3. Yarn your nodes!
-  * `yarn install`
+3. In the root directory of the cloned repo, yarn your nodes!
+  * `yarn`
 
 
 ## Deployment
 
-To deploy frontend:
+To automatically deploy to http://trustedreviews.surge.sh, push to master/ merge branch with master of https://github.com/dartmouth-cs52-19S/project-trustedreviews.
 
-`yarn deploy`
+To manually deploy frontend to http://trustedreviews.surge.sh:
+
+* `yarn deploy`
+
+To deploy somewhere else:
+
+* `yarn build`
+* `surge -p dist -d [somewhereelse].surge.sh`
+* `yarn clean`
+
+OR
+
+* Change the deployment URL on line 13 of ./package.json
+* `yarn deploy`
 
 ## Testing
 
