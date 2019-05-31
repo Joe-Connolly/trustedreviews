@@ -12,7 +12,7 @@ class NewReview extends Component {
       // picture_url: '',
       // company: '',
       // description: '',
-      rating: '',
+      rating: '3',
       ratingBody: '',
     };
 
