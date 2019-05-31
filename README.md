@@ -1,10 +1,19 @@
 # Trusted Reviews
 
-![Team Photo](./src/img/joeTheGoat.jpg)
+![Team Photo](./src/img/LandingPageScreenshot.png)
 
-TODO: short project description, some sample screenshots or mockups
+*Trusted Reviews* is a review-posting platform that offers a secure database of customer reviews and testimonials. Registered users can add to, view, and vote on a filterable/searchable list of product reviews. Retailers can access these reviews through a secure API that embeds a product summary (with its rating average and a link to the full set of reviews) within their websites.
 
-*Trusted Reviews* is a review-posting platform that offers a secure database of verified customer reviews and testimonials. Registered users can add to, view, and vote on a filterable/searchable list of product reviews. Retailers can access these reviews through a secure API that embeds consistently-styled and verified reviews within their websites.
+## Key Features
+
+Be sure to check out all of the features below while using the site!
+
+* **Authentication:** User sign-up and sign-in with backend token verification
+* **Product Database:** Searchable display of all products in database
+* **Review Posting:** Submit rating and review body with error-checking
+* **Review Voting:** Upvote or downvote a review up to one time
+* **User Profiles:** View all reviews posted by a given user; click-through to them
+* **API for Embedding:** Generates product summary card at */embed/product_id*
 
 ## Architecture
 
