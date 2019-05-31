@@ -56,6 +56,10 @@ OR
 
 ## Testing
 
+To run the website locally, run `yarn start` from the root directory. The output will be served at http://localhost:8080.
+
+Currently, server queries will be directed to https://trusted-reviews.herokuapp.com/api. If you are also running the backend locally, or would like to use another server, you can change the server request location on lines 25 and 26 of `./src/actions/index.js`.
+
 Please note while testing that some pages may take a moment to load! If a given action appears to have no impact on the page, be sure to check the console for error logs. For example, if a new user account is submitted without the password confirmation matching the original password, the user will not be created and an error will be logged in the console.
 
 ## Authors
