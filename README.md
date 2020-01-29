@@ -19,7 +19,7 @@ Be sure to check out all of the features below while using the site!
 
 The frontend of this app is built on top of the front-end starterpack built by Tim Tregubov, utilizing webpack, babel, eslint, sass, react/reactrouter, redux, express, and mongo.
 
-The backend of this app is a mongoDB database using mongoose for schema-based models and Heroku for deployment.  Access the backend here: https://github.com/Joe-Connolly/trustedreviews-api
+The backend of this app is a mongoDB database using mongoose for schema-based models and Heroku for deployment.  Access the backend [here](https://github.com/Joe-Connolly/trustedreviews-api).
 
 ## Setup
 
