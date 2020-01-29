@@ -64,7 +64,7 @@ Please note while testing that some pages may take a moment to load! If a given 
 
 ## Authors
 
-Shreyas Agnihotri, Joseph Connolly, Soren Thompson, Richard Yang
+Shreyas Agnihotri, Joe Connolly, Soren Thompson, Richard Yang
 
 ## Acknowledgments
 
