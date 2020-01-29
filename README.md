@@ -2,7 +2,7 @@
 
 ![Team Photo](./src/img/search.gif)
 
-*Trusted Reviews* is a review-posting platform that offers a secure database of customer reviews and testimonials. Registered users can add to, view, and vote on a filterable/searchable list of product reviews. Retailers can access these reviews through a secure API that embeds a product summary (with its rating average and a link to the full set of reviews) within their websites.
+*Trusted Reviews* is a review-posting platform that offers a secure database of customer reviews and testimonials. Registered users can add to, view, and vote on a filterable/searchable list of product reviews. Retailers can access these reviews through a secure API that embeds a product summary (with its rating average and a link to the full set of reviews) within their websites.  Trusted Reviews was built as a final project for Dartmouth's COSC52 Web Development course in Spring 2019.   
 
 ## Key Features
 
